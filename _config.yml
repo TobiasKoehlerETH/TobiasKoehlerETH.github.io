@@ -11,14 +11,14 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Tobias Köhler"
-resume_title:                   "Mechanical Engineer MSc ETH"
+resume_title:                   "Mechanical Engineering MSc ETH"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "tobiassskoehler@gmail.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone:       "555-7334"
-resume_contact_address:         "742 Evergreen Terrace, Springfield"
+resume_contact_telephone:       ""
+resume_contact_address:         "Zurich, Switzerland"
 
 resume_header_contact_info:     "Zurich, Switzerland • 555-7334 • tobiassskoehler@gmail.com"
 display_header_contact_info:    "false"
