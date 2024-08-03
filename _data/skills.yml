@@ -1,12 +1,26 @@
 # Skills
-# Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
+- skill: Languages
+  description: 
+    - German: ★★★★★ (5/5)
+    - English: ★★★★☆ (4/5)
+    - French: ★★★☆☆ (3/5)
+    - Italian: ★★★☆☆ (3/5)
 
-# Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
+# Technical Skills
+- skill: CAD design and simulations
+  description: Expertise in using NX, SolidWorks, COMSOL, and Ansys for CAD design and simulations.
 
-# Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+- skill: Coding
+  description: Proficient in programming with C++, Python, and VBA.
+
+- skill: Manufacturing techniques
+  description: Skilled in turning, milling, welding, and additive manufacturing (3D printing).
+
+- skill: Mechatronics
+  description: Knowledgeable in integrating mechanical, electrical, and control systems.
+
+- skill: MATLAB and Simulink
+  description: Experience with MATLAB and Simulink for modeling, simulation, and analysis of dynamic systems.
+
+- skill: MS Office
+  description: Proficient in using MS Office for documentation, data analysis, and presentation.
