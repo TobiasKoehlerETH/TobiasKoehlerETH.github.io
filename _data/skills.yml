@@ -1,15 +1,7 @@
 # Skills
 - skill: Languages
-  description:
-    - language: German
-      rating: "★★★★★ (5/5)"
-    - language: English
-      rating: "★★★★☆ (4/5)"
-    - language: French
-      rating: "★★★☆☆ (3/5)"
-    - language: Italian
-      rating: "★★★☆☆ (3/5)"
-
+  description: German ★★★★★ (5/5), English ★★★★☆ (4/5), Italian ★★★☆☆ (3/5) and French ★★★☆☆ (3/5).
+  
 # Technical Skills
 - skill: CAD design and simulations
   description: Expertise in using NX, SolidWorks, COMSOL, and Ansys for CAD design and simulations.
