@@ -1,10 +1,14 @@
 # Skills
 - skill: Languages
-  description: 
-  - German: "★★★★★ (5/5)"
-  - English: "★★★★☆ (4/5)"
-  - French: "★★★☆☆ (3/5)"
-  - Italian: "★★★☆☆ (3/5)"
+  description:
+    - language: German
+      rating: "★★★★★ (5/5)"
+    - language: English
+      rating: "★★★★☆ (4/5)"
+    - language: French
+      rating: "★★★☆☆ (3/5)"
+    - language: Italian
+      rating: "★★★☆☆ (3/5)"
 
 # Technical Skills
 - skill: CAD design and simulations
