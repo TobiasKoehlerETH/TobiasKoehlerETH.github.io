@@ -1,25 +1,22 @@
 # Skills
-- skill: Languages
+- skill: 📚 Languages
   description: German ★★★★★ (5/5), English ★★★★☆ (4/5), Italian ★★★☆☆ (3/5) and French ★★★☆☆ (3/5).
   
 # Technical Skills
-- skill: CAD design and simulations
+- skill: 👨‍💻 CAD design and simulations
   description: Expertise in using NX, SolidWorks, COMSOL, and Ansys for CAD design and simulations.
 
-- skill: Coding
-  description: Proficient in programming with C++, Python, and VBA.
+- skill: </> Coding
+  description: Proficient in programming with C++, Python, and VBA. Experience with MATLAB and Simulink for modeling, simulation, and analysis of systems.
 
-- skill: PCB design
+- skill: 💻 PCB design
   description: Ability to design and test printed circuit boards with up to 4 layers and high speed signals using KiCAD.
 
-- skill: Manufacturing techniques
+- skill: 🔧 Manufacturing techniques
   description: Skilled in turning, milling, welding, and additive manufacturing (3D printing).
 
-- skill: Mechatronics
+- skill: 🦾 Mechatronics
   description: Knowledgeable in integrating mechanical, electrical, and control systems.
 
-- skill: MATLAB and Simulink
-  description: Experience with MATLAB and Simulink for modeling, simulation, and analysis of dynamic systems.
-
-- skill: MS Office
+- skill: 📊 MS Office
   description: Proficient in using MS Office for documentation, data analysis, and presentation.
