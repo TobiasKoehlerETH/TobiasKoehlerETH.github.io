@@ -1,41 +1,142 @@
-# Resume template
+# CV Website - English Version
 
-## Docs
+A professional CV website built with Next.js, TypeScript, and shadcn/ui components, translated from the original German CV with exact layout replication.
 
-### Running locally
+## 🚀 Quick Start
 
-To test locally, run the following in your terminal:
+```bash
+# Install dependencies
+npm install
 
-1. Clone repo locally
-1. `bundle install`
-2. `bundle exec jekyll serve`
-3. Open your browser to `localhost:4000`
+# Start development server
+npm run dev
 
-### Running locally with Docker
+# Build for production
+npm run build
 
-To test locally with docker, run the following in your terminal after installing docker into your system:
+# Start production server
+npm start
+```
 
-1. `docker image build -t resume-template .`
-2. `docker run --rm --name resume-template -v "$PWD":/home/app --network host resume-template`
+Open [http://localhost:3000](http://localhost:3000) to view the CV website.
 
-### Customizing
+## 📁 Project Structure
 
-First you'll want to fork the repo to your own account. Then clone it locally and customize, or use the GitHub web editor to customize.
+```
+src/
+├── components/cv/          # CV-specific components
+│   ├── CVLayout.tsx       # Main layout component
+│   ├── CVHeader.tsx       # Header with name and title
+│   ├── CVSection.tsx      # Reusable section wrapper
+│   ├── ExperienceItem.tsx # Work/education entries
+│   ├── ContactInfo.tsx    # Contact information
+│   ├── SkillsSection.tsx  # Languages and technical skills
+│   ├── HobbiesSection.tsx # Personal interests
+│   └── index.ts          # Component exports
+├── data/
+│   └── cvData.ts         # CV content (EDIT HERE)
+└── app/
+    └── page.tsx          # Main page
+```
 
-#### Options/configuration
+## ✏️ Easy Editing
 
-Most of the basic customization will take place in the `/_config.yml` file. Here is a list of customizations available via `/_config.yml`:
+### To Update CV Content
 
-[...write these out...]
+Edit the file: `src/data/cvData.ts`
 
-#### Editing content
+This file contains all the CV information in a structured format:
 
-Most of the content configuration will take place in the `/_layouts/resume.html` file. Simply edit the markup there accordingly
+```typescript
+export const cvData = {
+  personal: {
+    name: "Your Name",
+    title: "Your Title",
+    profileImage: "/profile.jpg"
+  },
+  contact: {
+    dateOfBirth: "DD.MM.YYYY",
+    address: "Your Address",
+    // ... more contact info
+  },
+  experience: [
+    {
+      title: "Job Title",
+      organization: "Company Name",
+      period: "MM/YYYY - MM/YYYY",
+      description: "Job description"
+    }
+  ],
+  // ... more sections
+}
+```
 
-### Publishing to GitHub Pages for free
+### To Update Styling
 
-[GitHub Pages](https://pages.github.com/) will host this for free with your GitHub account. Just make sure you're using a `gh-pages` branch, and the site will automatically be available at `yourusername.github.io/resume-template` (you can rename the repo to resume for your own use if you want it to be available at `yourusername.github.io/resume`). You can also add a CNAME if you want it to be available at a custom domain...
+- **Colors**: Edit the blue theme in individual components (search for `bg-blue-600`)
+- **Layout**: Modify `CVLayout.tsx` for structural changes
+- **Typography**: Update Tailwind classes in component files
 
-### Configuring with your own domain name
+### To Add a Profile Image
 
-To setup your GH Pages site with a custom domain, [follow the instructions](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) on the GitHub Help site for that topic.
+1. Place your image in the `public/` folder (e.g., `public/profile.jpg`)
+2. Update the `profileImage` path in `cvData.ts`
+
+## 🎨 Design Features
+
+- **Exact Layout Match**: Replicates the original German CV design
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Professional Styling**: Clean, modern appearance with shadcn/ui components
+- **Blue Theme**: Matches the original blue header sections
+- **Print-Friendly**: A4-like layout optimized for printing
+
+## 🛠️ Technologies Used
+
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first styling
+- **shadcn/ui** - High-quality components
+- **React Components** - Modular architecture
+
+## 📝 Component Documentation
+
+Each component includes:
+- TypeScript interfaces for props
+- JSDoc comments explaining purpose
+- Professional code standards
+- Easy-to-understand structure
+
+## 🔧 Customization
+
+### Adding New Sections
+
+1. Create a new component in `src/components/cv/`
+2. Add the section data to `cvData.ts`
+3. Include it in `CVLayout.tsx`
+4. Export it from `src/components/cv/index.ts`
+
+### Changing the Theme
+
+The website uses a blue theme (`bg-blue-600`) consistent with the original CV. To change:
+
+1. Search for `blue-600` in component files
+2. Replace with your preferred color
+3. Update hover states and related colors
+
+## 📱 Responsive Behavior
+
+- **Desktop**: Two-column layout (main content + sidebar)
+- **Tablet**: Stacked layout with preserved sections
+- **Mobile**: Single column, optimized for readability
+
+## 🖨️ Print Optimization
+
+The layout is designed to work well when printed:
+- A4-like proportions
+- Proper page breaks
+- High contrast for printing
+- Professional formatting
+
+---
+
+**Easy Preview**: Just run `npm run dev` and open `http://localhost:3000` to see your changes instantly!
