@@ -57,10 +57,10 @@ export const cvData: CVData = {
   
   contact: {
     dateOfBirth: "17.12.1999",
-    address: "Bachtelstrasse 5",
-    city: "8400 Winterthur",
+    address: "",
+    city: "Winterthur",
     country: "Switzerland",
-    mobile: "+41 76 509 77 92",
+    mobile: "",
     email: "tobiaskoehler@gmail.com",
     linkedin: "www.linkedin.com/in/tkoehler-eth"
   },
