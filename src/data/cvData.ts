@@ -67,7 +67,7 @@ export const cvData: CVData = {
   
   experience: [
     {
-      title: "Sensor Developer",
+      title: "Sensor Development Engineer",
       organization: "Angst+Pfister",
       period: "05/2024 - today",
       isCurrent: true,
@@ -111,11 +111,11 @@ export const cvData: CVData = {
   
   technicalSkills: [
     "CAD Design and Simulations in NX, SolidWorks, COMSOL and Ansys",
-    "Programming with C++, Python and MATLAB",
+    "Programming with C++, Python, TypeScript and MATLAB",
     "Manufacturing technology: Turning, CNC milling, MIG/MAG welding and additive manufacturing (3D printing)",
     "Mechatronics",
-    "MATLAB and Simulink",
-    "MS Office"
+    "PCB Design with KiCad",
+    "MATLAB and Simulink"
   ],
   
   hobbies: [

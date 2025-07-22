@@ -18,6 +18,7 @@ import {
   Linkedin,
   ExternalLink
 } from "lucide-react"
+import { LinkPreview } from "@/components/ui/link-preview"
 
 interface ContactInfoProps {
   /** Date of birth */
@@ -129,17 +130,25 @@ export const ContactInfo = ({
     )
 
     if (item.isClickable && item.href) {
-      return (
-        <a
-          key={index}
-          href={item.href}
-          target={item.external ? "_blank" : undefined}
-          rel={item.external ? "noopener noreferrer" : undefined}
-          className="block hover:bg-gray-100 rounded-lg p-2 -m-2 transition-colors duration-200"
-        >
-          {content}
-        </a>
-      )
+      if (item.external) {
+        return (
+          <div key={index} className="block hover:bg-gray-100 rounded-lg p-2 -m-2 transition-colors duration-200">
+            <LinkPreview url={item.href}>
+              {content}
+            </LinkPreview>
+          </div>
+        )
+      } else {
+        return (
+          <a
+            key={index}
+            href={item.href}
+            className="block hover:bg-gray-100 rounded-lg p-2 -m-2 transition-colors duration-200"
+          >
+            {content}
+          </a>
+        )
+      }
     }
 
     return (

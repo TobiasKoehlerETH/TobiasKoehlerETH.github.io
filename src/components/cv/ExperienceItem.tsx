@@ -10,6 +10,7 @@
 
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
+import { LinkPreview } from "@/components/ui/link-preview"
 
 interface ExperienceItemProps {
   /** Job title or degree name */
@@ -92,15 +93,12 @@ export const ExperienceItem = ({
                 return (
                   <div key={index} className="leading-relaxed">
                     {beforeUrl}
-                    <a 
-                      href={fullUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-black font-semibold hover:underline hover:bg-gray-100 px-2 py-1 rounded transition-all duration-200"
-                    >
-                      View Publication
-                      <ExternalLink size={12} />
-                    </a>
+                    <LinkPreview url={fullUrl}>
+                      <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline hover:bg-gray-100 px-2 py-1 rounded transition-all duration-200">
+                        View Publication
+                        <ExternalLink size={12} />
+                      </span>
+                    </LinkPreview>
                   </div>
                 )
               }
