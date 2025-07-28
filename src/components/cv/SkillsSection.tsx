@@ -10,6 +10,7 @@
 
 import React from "react"
 import { Code, Globe, Wrench } from "lucide-react"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 interface LanguageSkill {
   /** Language name */
@@ -41,8 +42,8 @@ export const SkillsSection = ({
         key={index}
         className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer transform hover:scale-125 ${
           index < level 
-            ? 'bg-black hover:bg-gray-800 shadow-md hover:shadow-lg' 
-            : 'bg-gray-300 hover:bg-gray-400'
+            ? 'bg-black shadow-md' 
+            : 'bg-gray-300'
         }`}
         title={`Level ${index + 1}${index < level ? ' - Achieved' : ''}`}
       />
@@ -77,13 +78,16 @@ export const SkillsSection = ({
           {languages.map((skill, index) => (
             <div 
               key={index} 
-              className="group flex items-center justify-between p-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-sm border border-transparent hover:border-gray-200"
+              className="group relative flex items-center justify-between p-3 rounded-lg transition-all duration-300 hover:shadow-sm border border-transparent"
             >
+              <GlowingEffect disabled={false} spread={20} />
+              <div className="relative z-10 flex items-center justify-between w-full rounded-lg transition-all duration-300 p-2 -m-2">
               <span className="text-gray-800 font-medium group-hover:text-black transition-colors duration-300">
                 {skill.language}
               </span>
               <div className="flex gap-2">
                 {renderProficiencyDots(skill.level)}
+              </div>
               </div>
             </div>
           ))}
@@ -104,8 +108,10 @@ export const SkillsSection = ({
             return (
               <div 
                 key={index} 
-                className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:shadow-sm border border-transparent hover:border-gray-200 cursor-pointer"
+                className="group relative flex items-start gap-3 p-3 rounded-lg transition-all duration-300 hover:shadow-sm border border-transparent cursor-pointer"
               >
+                <GlowingEffect disabled={false} spread={20} />
+                <div className="relative z-10 flex items-start gap-3 w-full rounded-lg transition-all duration-300 p-2 -m-2">
                 <div className="flex-shrink-0 mt-0.5">
                   <IconComponent 
                     size={16} 
@@ -115,6 +121,7 @@ export const SkillsSection = ({
                 <span className="text-gray-800 text-sm leading-relaxed group-hover:text-black transition-colors duration-300">
                   {skill}
                 </span>
+                </div>
               </div>
             )
           })}

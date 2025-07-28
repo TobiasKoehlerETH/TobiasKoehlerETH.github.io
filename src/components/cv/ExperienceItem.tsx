@@ -11,6 +11,7 @@
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
 import { LinkPreview } from "@/components/ui/link-preview"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 interface ExperienceItemProps {
   /** Job title or degree name */
@@ -33,7 +34,9 @@ export const ExperienceItem = ({
   isCurrent = false
 }: ExperienceItemProps): React.ReactElement => {
   return (
-    <div className="mb-6 last:mb-0 group hover:bg-gradient-to-r hover:from-gray-50 hover:to-transparent rounded-lg p-4 -m-4 transition-all duration-300 hover:shadow-sm border border-transparent hover:border-gray-200">
+    <div className="mb-6 last:mb-0 group relative rounded-lg p-4 -m-4 transition-all duration-300 hover:shadow-sm border border-transparent">
+      <GlowingEffect disabled={false} spread={25} />
+      <div className="relative z-10 rounded-lg transition-all duration-300">
       {/* Title and Organization */}
       <div className="mb-3">
         <div className="flex items-start gap-3 mb-2">
@@ -41,7 +44,7 @@ export const ExperienceItem = ({
             <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
               isCurrent 
                 ? 'bg-black shadow-lg' 
-                : 'bg-gray-500 group-hover:bg-gray-700'
+                : 'bg-gray-500'
             }`} />
           </div>
           <div className="flex-1">
@@ -94,7 +97,7 @@ export const ExperienceItem = ({
                   <div key={index} className="leading-relaxed">
                     {beforeUrl}
                     <LinkPreview url={fullUrl}>
-                      <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline hover:bg-gray-100 px-2 py-1 rounded transition-all duration-200">
+                      <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline px-2 py-1 rounded transition-all duration-200">
                         View Publication
                         <ExternalLink size={12} />
                       </span>
@@ -115,6 +118,7 @@ export const ExperienceItem = ({
           </div>
         </div>
       )}
+      </div>
     </div>
   )
 }

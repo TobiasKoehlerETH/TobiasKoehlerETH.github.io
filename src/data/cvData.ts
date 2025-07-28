@@ -58,7 +58,7 @@ export const cvData: CVData = {
   contact: {
     dateOfBirth: "17.12.1999",
     address: "",
-    city: "Winterthur",
+    city: "8400 Winterthur",
     country: "Switzerland",
     mobile: "",
     email: "tobiaskoehler@gmail.com",

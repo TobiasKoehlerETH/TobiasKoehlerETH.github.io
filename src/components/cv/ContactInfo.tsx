@@ -19,6 +19,7 @@ import {
   ExternalLink
 } from "lucide-react"
 import { LinkPreview } from "@/components/ui/link-preview"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 interface ContactInfoProps {
   /** Date of birth */
@@ -132,28 +133,36 @@ export const ContactInfo = ({
     if (item.isClickable && item.href) {
       if (item.external) {
         return (
-          <div key={index} className="block hover:bg-gray-100 rounded-lg p-2 -m-2 transition-colors duration-200">
-            <LinkPreview url={item.href}>
-              {content}
-            </LinkPreview>
+          <div key={index} className="relative block rounded-lg p-2 -m-2 transition-colors duration-200">
+            <GlowingEffect disabled={false} spread={15} />
+            <div className="relative z-10 rounded-lg p-1 -m-1 transition-colors duration-200">
+              <LinkPreview url={item.href}>
+                {content}
+              </LinkPreview>
+            </div>
           </div>
         )
       } else {
         return (
-          <a
-            key={index}
-            href={item.href}
-            className="block hover:bg-gray-100 rounded-lg p-2 -m-2 transition-colors duration-200"
-          >
-            {content}
-          </a>
+          <div key={index} className="relative rounded-lg p-2 -m-2 transition-colors duration-200">
+            <GlowingEffect disabled={false} spread={15} />
+            <a
+              href={item.href}
+              className="relative z-10 block rounded-lg p-1 -m-1 transition-colors duration-200"
+            >
+              {content}
+            </a>
+          </div>
         )
       }
     }
 
     return (
-      <div key={index} className="p-2 -m-2">
-        {content}
+      <div key={index} className="relative rounded-lg p-2 -m-2">
+        <GlowingEffect disabled={false} proximity={100} spread={20} />
+        <div className="relative z-10 rounded-lg p-1 -m-1 transition-colors duration-200">
+          {content}
+        </div>
       </div>
     )
   }
