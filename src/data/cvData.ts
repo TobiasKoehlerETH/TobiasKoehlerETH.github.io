@@ -28,12 +28,20 @@ export interface CVData {
     period: string
     description?: string
     isCurrent?: boolean
+    website?: string
+    projects?: Array<{
+      name: string
+      description: string
+      technologies?: string[]
+      link?: string
+    }>
   }>
   education: Array<{
     title: string
     organization: string
     period: string
     description?: string
+    website?: string
   }>
   languages: Array<{
     language: string
@@ -71,12 +79,14 @@ export const cvData: CVData = {
       organization: "Angst+Pfister",
       period: "05/2024 - today",
       isCurrent: true,
+      website: "https://www.angst-pfister.com",
       description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design"
     },
     {
       title: "Intern Development Engineer",
       organization: "Syntegon Packaging Systems AG",
       period: "04/2022 - 10/2022",
+      website: "https://www.syntegon.com",
       description: "Construction with SolidWorks\nStatic simulations\nTest set-up for laser sensors\nThermal expansion measurements\nIT tool coding using VisualBasic\nData analysis and visualization"
     }
   ],
@@ -86,18 +96,21 @@ export const cvData: CVData = {
       title: "Master of Science Mechanical Engineering ETH",
       organization: "ETH Zurich",
       period: "09/2022 - 03/2024",
+      website: "https://ethz.ch",
       description: "Multiphysics simulation, learning, additive manufacturing and optimization problems\nSemester thesis at startup diaxxo\nGrade 6.0 'Disinfection Mechanism of a PCR Device'\nMaster thesis at Balgrist University Hospital 'Textile Sensors for Diabetic Patients'\nPublication: https://xploreqa.ieee.org/document/10914107"
     },
     {
       title: "Bachelor of Science Mechanical Engineering ETH",
       organization: "ETH Zurich", 
       period: "09/2018 - 09/2021",
+      website: "https://ethz.ch",
       description: "Focus on \"Engineering for Health\"\nBachelor thesis at ARSL (Acoustic Robotics for Life Sciences and Healthcare Lab) Grade 6.0 (best)\nPublication: doi.org/10.1002/admi.202200877"
     },
     {
       title: "Matura",
       organization: "Kantonsschule Rychenberg",
       period: "08/2012 - 07/2018",
+      website: "https://www.krw.ch",
       description: "Language profile (English/Italian)"
     }
   ],

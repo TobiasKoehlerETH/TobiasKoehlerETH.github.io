@@ -53,6 +53,7 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
                       period={exp.period}
                       description={exp.description}
                       isCurrent={exp.isCurrent}
+                      website={exp.website}
                     />
                   ))}
                 </CVSection>
@@ -66,6 +67,7 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
                       organization={edu.organization}
                       period={edu.period}
                       description={edu.description}
+                      website={edu.website}
                     />
                   ))}
                 </CVSection>

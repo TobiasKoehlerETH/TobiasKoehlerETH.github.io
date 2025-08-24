@@ -23,6 +23,8 @@ interface ExperienceItemProps {
   description?: string
   /** Whether this is the current position */
   isCurrent?: boolean
+  /** Optional website URL for the organization */
+  website?: string
 }
 
 export const ExperienceItem = ({
@@ -30,7 +32,8 @@ export const ExperienceItem = ({
   organization,
   period,
   description,
-  isCurrent = false
+  isCurrent = false,
+  website
 }: ExperienceItemProps): React.ReactElement => {
   return (
     <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
@@ -67,9 +70,22 @@ export const ExperienceItem = ({
           <span className="hidden sm:block text-gray-300">•</span>
           <div className="flex items-center gap-2">
             <Building size={14} className="text-gray-400" />
-            <span className="font-bold text-lg text-black">
-              {organization}
-            </span>
+            {website ? (
+              <a
+                href={website}
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold text-lg text-black hover:text-gray-600 transition-colors duration-150 group relative"
+              >
+                {organization}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-black group-hover:w-full transition-all duration-150" />
+                <ExternalLink size={14} className="inline ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
+              </a>
+            ) : (
+              <span className="font-bold text-lg text-black">
+                {organization}
+              </span>
+            )}
           </div>
         </div>
       </div>
