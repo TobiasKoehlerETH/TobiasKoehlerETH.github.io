@@ -10,7 +10,6 @@
 
 import React from "react"
 import { Code, Globe, Wrench } from "lucide-react"
-import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 interface LanguageSkill {
   /** Language name */
@@ -68,21 +67,21 @@ export const SkillsSection = ({
     <div className="space-y-8">
       {/* Languages Section */}
       <div>
-        <div className="bg-black text-white px-4 py-2 mb-4 rounded-md flex items-center gap-2">
+        <div className="group bg-black text-white px-4 py-2 mb-4 rounded-md flex items-center gap-2">
           <Globe className="text-white" size={20} />
-          <h4 className="text-lg font-semibold">
+          <h4 className="relative inline-block text-lg font-semibold">
             Languages
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-150 group-hover:w-full" />
           </h4>
         </div>
         <div className="space-y-4">
           {languages.map((skill, index) => (
             <div 
               key={index} 
-              className="group relative flex items-center justify-between p-3 rounded-lg transition-all duration-300 hover:shadow-sm border border-transparent"
+              className="relative flex items-center justify-between p-3 rounded-lg transition-all duration-150 hover:bg-gray-50 hover:shadow-sm"
             >
-              <GlowingEffect disabled={false} spread={20} />
-              <div className="relative z-10 flex items-center justify-between w-full rounded-lg transition-all duration-300 p-2 -m-2">
-              <span className="text-gray-800 font-medium group-hover:text-black transition-colors duration-300">
+              <div className="relative z-10 flex items-center justify-between w-full rounded-lg p-2 -m-2">
+              <span className="text-gray-800 font-medium">
                 {skill.language}
               </span>
               <div className="flex gap-2">
@@ -96,10 +95,11 @@ export const SkillsSection = ({
 
       {/* Technical Skills Section */}
       <div>
-        <div className="bg-black text-white px-4 py-2 mb-4 rounded-md flex items-center gap-2">
+        <div className="group bg-black text-white px-4 py-2 mb-4 rounded-md flex items-center gap-2">
           <Code className="text-white" size={20} />
-          <h4 className="text-lg font-semibold">
+          <h4 className="relative inline-block text-lg font-semibold">
             Special Skills
+            <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-150 group-hover:w-full" />
           </h4>
         </div>
         <div className="space-y-3">
@@ -108,17 +108,16 @@ export const SkillsSection = ({
             return (
               <div 
                 key={index} 
-                className="group relative flex items-start gap-3 p-3 rounded-lg transition-all duration-300 hover:shadow-sm border border-transparent cursor-pointer"
+                className="relative flex items-start gap-3 p-3 rounded-lg cursor-pointer transition-all duration-150 hover:bg-gray-50 hover:shadow-sm"
               >
-                <GlowingEffect disabled={false} spread={20} />
-                <div className="relative z-10 flex items-start gap-3 w-full rounded-lg transition-all duration-300 p-2 -m-2">
+                <div className="relative z-10 flex items-start gap-3 w-full rounded-lg p-2 -m-2">
                 <div className="flex-shrink-0 mt-0.5">
                   <IconComponent 
                     size={16} 
-                    className="text-gray-600 group-hover:text-black transition-colors duration-300" 
+                    className="text-gray-600" 
                   />
                 </div>
-                <span className="text-gray-800 text-sm leading-relaxed group-hover:text-black transition-colors duration-300">
+                <span className="text-gray-800 text-sm leading-relaxed">
                   {skill}
                 </span>
                 </div>

@@ -11,7 +11,6 @@
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
 import { LinkPreview } from "@/components/ui/link-preview"
-import { GlowingEffect } from "@/components/ui/glowing-effect"
 
 interface ExperienceItemProps {
   /** Job title or degree name */
@@ -34,9 +33,8 @@ export const ExperienceItem = ({
   isCurrent = false
 }: ExperienceItemProps): React.ReactElement => {
   return (
-    <div className="mb-6 last:mb-0 group relative rounded-lg p-4 -m-4 transition-all duration-300 hover:shadow-sm border border-transparent">
-      <GlowingEffect disabled={false} spread={25} />
-      <div className="relative z-10 rounded-lg transition-all duration-300">
+    <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+      <div className="relative z-10 rounded-lg">
       {/* Title and Organization */}
       <div className="mb-3">
         <div className="flex items-start gap-3 mb-2">
@@ -48,7 +46,7 @@ export const ExperienceItem = ({
             }`} />
           </div>
           <div className="flex-1">
-            <h4 className="text-lg font-semibold text-gray-800 mb-1 group-hover:text-black transition-colors duration-300">
+            <h4 className="text-lg font-semibold text-gray-800 mb-1">
               {title}
               {isCurrent && (
                 <span className="ml-2 text-xs bg-gray-200 text-gray-800 px-2 py-1 rounded-full font-medium">
@@ -61,15 +59,15 @@ export const ExperienceItem = ({
         
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm ml-6">
           <div className="flex items-center gap-2">
-            <Calendar size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors duration-300" />
-            <span className="font-medium text-gray-600 group-hover:text-gray-800 transition-colors duration-300">
+            <Calendar size={14} className="text-gray-400" />
+            <span className="font-medium text-gray-600">
               {period}
             </span>
           </div>
           <span className="hidden sm:block text-gray-300">•</span>
           <div className="flex items-center gap-2">
-            <Building size={14} className="text-gray-400 group-hover:text-gray-600 transition-colors duration-300" />
-            <span className="font-bold text-lg text-black group-hover:text-gray-800 transition-colors duration-300">
+            <Building size={14} className="text-gray-400" />
+            <span className="font-bold text-lg text-black">
               {organization}
             </span>
           </div>
@@ -78,7 +76,7 @@ export const ExperienceItem = ({
       
       {/* Description */}
       {description && (
-        <div className="text-gray-700 text-sm ml-6 group-hover:text-gray-800 transition-colors duration-300">
+        <div className="text-gray-700 text-sm ml-6">
           <div className="space-y-2">
             {description.split('\n').map((line, index) => {
               const trimmedLine = line.trim()
@@ -108,7 +106,7 @@ export const ExperienceItem = ({
               
               return (
                 <div key={index} className="flex items-center gap-2">
-                  <span className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors duration-300">•</span>
+                  <span className="text-gray-500 text-sm">•</span>
                   <span className="leading-relaxed">
                     {trimmedLine}
                   </span>

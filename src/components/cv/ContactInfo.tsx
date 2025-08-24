@@ -19,7 +19,7 @@ import {
   ExternalLink
 } from "lucide-react"
 import { LinkPreview } from "@/components/ui/link-preview"
-import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { InteractiveLink } from "@/components/ui/interactive-link"
 
 interface ContactInfoProps {
   /** Date of birth */
@@ -105,9 +105,9 @@ export const ContactInfo = ({
     
     const content = (
       <div className="flex items-start space-x-3 group">
-        <div className={`flex-shrink-0 mt-0.5 transition-colors duration-200 ${
+        <div className={`flex-shrink-0 mt-0.5 ${
           item.isClickable 
-            ? 'text-gray-700 group-hover:text-black' 
+            ? 'text-gray-700' 
             : 'text-gray-500'
         }`}>
           <Icon size={16} />
@@ -116,9 +116,9 @@ export const ContactInfo = ({
           <div className="text-sm font-semibold text-gray-800 mb-1">
             {item.label}
           </div>
-          <div className={`text-sm break-words transition-colors duration-200 ${
+          <div className={`text-sm break-words ${
             item.isClickable 
-              ? 'text-gray-700 group-hover:text-black group-hover:underline' 
+              ? 'text-gray-700' 
               : 'text-gray-600'
           }`}>
             {item.value}
@@ -133,34 +133,33 @@ export const ContactInfo = ({
     if (item.isClickable && item.href) {
       if (item.external) {
         return (
-          <div key={index} className="relative block rounded-lg p-2 -m-2 transition-colors duration-200">
-            <GlowingEffect disabled={false} spread={15} />
-            <div className="relative z-10 rounded-lg p-1 -m-1 transition-colors duration-200">
-              <LinkPreview url={item.href}>
-                {content}
+          <div key={index} className="relative block rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+            <div className="relative z-10 rounded-lg p-1 -m-1">
+              <LinkPreview
+                url={item.href}
+                className={
+                  "relative text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
+                }
+              >
+                {item.value}
               </LinkPreview>
             </div>
           </div>
         )
       } else {
         return (
-          <div key={index} className="relative rounded-lg p-2 -m-2 transition-colors duration-200">
-            <GlowingEffect disabled={false} spread={15} />
-            <a
-              href={item.href}
-              className="relative z-10 block rounded-lg p-1 -m-1 transition-colors duration-200"
-            >
+          <div key={index} className="relative rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+            <InteractiveLink href={item.href} className="relative z-10 block rounded-lg p-1 -m-1">
               {content}
-            </a>
+            </InteractiveLink>
           </div>
         )
       }
     }
 
     return (
-      <div key={index} className="relative rounded-lg p-2 -m-2">
-        <GlowingEffect disabled={false} proximity={100} spread={20} />
-        <div className="relative z-10 rounded-lg p-1 -m-1 transition-colors duration-200">
+      <div key={index} className="relative rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+        <div className="relative z-10 rounded-lg p-1 -m-1">
           {content}
         </div>
       </div>

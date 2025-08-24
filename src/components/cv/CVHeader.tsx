@@ -10,7 +10,6 @@
 
 import React from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
 interface CVHeaderProps {
   /** Full name of the person */
@@ -31,7 +30,7 @@ export const CVHeader = ({
       {/* Name and Title Section */}
       <div className="mb-6 lg:mb-0">
         <div className="mb-2">
-          <TextHoverEffect text={name} duration={0.5} />
+          <h1 className="text-4xl font-bold text-gray-900">{name}</h1>
         </div>
         <h2 className="text-xl text-gray-600 font-medium">
           {title}
@@ -40,7 +39,7 @@ export const CVHeader = ({
       
       {/* Profile Image */}
       <div className="flex justify-center lg:justify-end">
-        <Avatar className="w-32 h-32 lg:w-40 lg:h-40">
+        <Avatar className="w-32 h-32 lg:w-40 lg:h-40 transition-transform duration-150 hover:scale-[1.01] hover:[transform:rotate(0.3deg)] hover:ring-2 hover:ring-gray-300">
           <AvatarImage 
             src={profileImage} 
             alt={`${name} profile picture`}

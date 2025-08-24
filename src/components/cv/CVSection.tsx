@@ -26,10 +26,11 @@ export const CVSection = ({
 }: CVSectionProps): React.ReactElement => {
   return (
     <div className={`mb-8 ${className}`}>
-      {/* Black Header with small rounded corners */}
-      <div className="bg-black text-white px-4 py-2 mb-4 rounded-md">
-        <h3 className="text-lg font-semibold">
+      {/* Black Header with small rounded corners and subtle underline animation */}
+      <div className="group bg-black text-white px-4 py-2 mb-4 rounded-md">
+        <h3 className="relative inline-block text-lg font-semibold">
           {title}
+          <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-150 group-hover:w-full" />
         </h3>
       </div>
       
