@@ -42,6 +42,12 @@ export interface CVData {
     period: string
     description?: string
     website?: string
+    projects?: Array<{
+      name: string
+      description: string
+      technologies?: string[]
+      link?: string
+    }>
   }>
   languages: Array<{
     language: string
@@ -80,14 +86,22 @@ export const cvData: CVData = {
       period: "05/2024 - today",
       isCurrent: true,
       website: "https://www.angst-pfister.com",
-      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design"
+      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design",
+      projects: [
+        {
+          name: "Test",
+          description: "Test project description",
+          technologies: ["Test"]
+        }
+      ]
     },
     {
       title: "Intern Development Engineer",
       organization: "Syntegon Packaging Systems AG",
       period: "04/2022 - 10/2022",
       website: "https://www.syntegon.com",
-      description: "Construction with SolidWorks\nStatic simulations\nTest set-up for laser sensors\nThermal expansion measurements\nIT tool coding using VisualBasic\nData analysis and visualization"
+      description: "Construction with SolidWorks\nStatic simulations\nTest set-up for laser sensors\nThermal expansion measurements\nIT tool coding using VisualBasic\nData analysis and visualization",
+      projects: []
     }
   ],
   

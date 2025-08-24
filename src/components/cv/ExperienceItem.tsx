@@ -11,6 +11,7 @@
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
 import { LinkPreview } from "@/components/ui/link-preview"
+import { ProjectsSection } from "./ProjectsSection"
 
 interface ExperienceItemProps {
   /** Job title or degree name */
@@ -25,6 +26,13 @@ interface ExperienceItemProps {
   isCurrent?: boolean
   /** Optional website URL for the organization */
   website?: string
+  /** Optional projects for this experience */
+  projects?: Array<{
+    name: string
+    description: string
+    technologies?: string[]
+    link?: string
+  }>
 }
 
 export const ExperienceItem = ({
@@ -33,7 +41,8 @@ export const ExperienceItem = ({
   period,
   description,
   isCurrent = false,
-  website
+  website,
+  projects
 }: ExperienceItemProps): React.ReactElement => {
   return (
     <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
@@ -133,6 +142,7 @@ export const ExperienceItem = ({
         </div>
       )}
       </div>
+      {projects && <ProjectsSection projects={projects} />}
     </div>
   )
 }
