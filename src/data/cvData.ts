@@ -139,6 +139,7 @@ export const cvData: CVData = {
   technicalSkills: [
     "CAD Design and Simulations in NX, SolidWorks, COMSOL and Ansys",
     "Programming with C++, Python, TypeScript and MATLAB",
+    "Latest LLM coding agents and tools (including OpenCode with skills and subagents) across Rust, Python, TypeScript, and C++ for embedded microcontroller firmware development",
     "Manufacturing technology: Turning, CNC milling, MIG/MAG welding and additive manufacturing (3D printing)",
     "Mechatronics",
     "PCB Design with KiCad",
