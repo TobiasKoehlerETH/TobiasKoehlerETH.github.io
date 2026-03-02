@@ -9,6 +9,7 @@
  */
 
 import React from "react"
+import Link from "next/link"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 interface CVHeaderProps {
@@ -35,6 +36,14 @@ export const CVHeader = ({
         <h2 className="text-xl text-gray-600 font-medium">
           {title}
         </h2>
+        <div className="mt-4">
+          <Link
+            href="/projects"
+            className="inline-flex rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100"
+          >
+            View Project Portfolio
+          </Link>
+        </div>
       </div>
       
       {/* Profile Image */}
