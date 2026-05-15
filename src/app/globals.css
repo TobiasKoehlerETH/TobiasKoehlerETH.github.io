@@ -121,3 +121,196 @@
   }
 }
 
+.cv-screen,
+.cv-page {
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.cv-inverted .cv-screen {
+  background: #000000 !important;
+}
+
+.cv-inverted body {
+  background: #000000 !important;
+}
+
+.cv-inverted .cv-page {
+  background: #151922 !important;
+  color: #e8eaef !important;
+  box-shadow: 0 18px 60px rgb(0 0 0 / 45%) !important;
+}
+
+.cv-inverted .cv-page .bg-muted,
+.cv-inverted .cv-page .bg-gray-50,
+.cv-inverted .cv-page .hover\:bg-gray-50:hover {
+  background-color: #202630 !important;
+}
+
+.cv-inverted .cv-page .bg-black {
+  background-color: #eef1f6 !important;
+  color: #111827 !important;
+}
+
+.cv-inverted .cv-page .text-white {
+  color: #111827 !important;
+}
+
+.cv-inverted .cv-page .bg-white,
+.cv-inverted .cv-page .bg-gray-100,
+.cv-inverted .cv-page .bg-gray-200 {
+  background-color: #2c3441 !important;
+}
+
+.cv-inverted .cv-page .bg-gray-300 {
+  background-color: #4b5563 !important;
+}
+
+.cv-inverted .cv-page .bg-gray-500 {
+  background-color: #9ca3af !important;
+}
+
+.cv-inverted .cv-page .text-gray-900,
+.cv-inverted .cv-page .text-gray-800,
+.cv-inverted .cv-page .text-black {
+  color: #f4f6fb !important;
+}
+
+.cv-inverted .cv-page .text-gray-700 {
+  color: #d7dce5 !important;
+}
+
+.cv-inverted .cv-page .text-gray-600,
+.cv-inverted .cv-page .text-gray-500,
+.cv-inverted .cv-page .text-gray-400 {
+  color: #aeb7c4 !important;
+}
+
+.cv-inverted .cv-page .hover\:text-black:hover,
+.cv-inverted .cv-page .hover\:text-gray-600:hover,
+.cv-inverted .cv-page .hover\:text-gray-700:hover {
+  color: #ffffff !important;
+}
+
+.cv-inverted .cv-page .border-gray-200 {
+  border-color: #374151 !important;
+}
+
+.cv-inverted .cv-page .shadow-sm {
+  box-shadow: 0 8px 28px rgb(0 0 0 / 24%) !important;
+}
+
+.cv-inverted .cv-page .hover\:shadow-sm:hover {
+  box-shadow: 0 10px 32px rgb(0 0 0 / 28%) !important;
+}
+
+.cv-inverted .cv-page .cv-profile-image {
+  filter: none !important;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  :root {
+    --cv-print-scale: 0.63;
+    --cv-print-width: 72rem;
+    --cv-print-page-width: 210mm;
+    --cv-print-page-height: 297mm;
+    --cv-print-page-padding: 5mm;
+  }
+
+  html,
+  body {
+    width: var(--cv-print-page-width) !important;
+    height: var(--cv-print-page-height) !important;
+    background: #f9fafb !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-screen {
+    position: relative !important;
+    width: var(--cv-print-page-width) !important;
+    height: var(--cv-print-page-height) !important;
+    min-height: var(--cv-print-page-height) !important;
+    background: #f9fafb !important;
+    overflow: hidden !important;
+    padding: var(--cv-print-page-padding) 0 !important;
+  }
+
+  .cv-shell {
+    position: absolute !important;
+    top: var(--cv-print-page-padding) !important;
+    left: 50% !important;
+    width: var(--cv-print-width) !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) scale(var(--cv-print-scale)) !important;
+    transform-origin: top center !important;
+  }
+
+  .cv-page {
+    background: white;
+    color: inherit;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%) !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+  }
+
+  .cv-content {
+    padding: 2rem !important;
+  }
+
+  .cv-content > .mb-8.flex {
+    align-items: flex-start !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  .cv-content > .mb-8.flex > div:first-child {
+    margin-bottom: 0 !important;
+  }
+
+  .cv-content > .grid {
+    display: grid !important;
+    gap: 2rem !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .cv-content > .grid > .lg\:col-span-2 {
+    grid-column: span 2 / span 2 !important;
+  }
+
+  .cv-page .mb-6,
+  .cv-page .mb-8,
+  .cv-page .rounded-lg {
+    break-inside: avoid;
+  }
+
+  .cv-header-actions {
+    display: flex !important;
+    gap: 0.25rem !important;
+  }
+
+  .cv-header-actions a,
+  .cv-header-actions button {
+    color: #4b5563 !important;
+  }
+
+  .cv-theme-toggle {
+    pointer-events: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
+

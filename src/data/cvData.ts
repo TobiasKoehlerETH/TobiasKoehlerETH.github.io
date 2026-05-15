@@ -17,9 +17,9 @@ export interface CVData {
     dateOfBirth: string
     address: string
     city: string
-    country: string
     mobile: string
     email: string
+    github: string
     linkedin: string
   }
   experience: Array<{
@@ -71,11 +71,11 @@ export const cvData: CVData = {
   
   contact: {
     dateOfBirth: "17.12.1999",
-    address: "",
-    city: "8400 Winterthur",
-    country: "Switzerland",
+    address: "8400 Winterthur, Switzerland",
+    city: "",
     mobile: "",
-    email: "tobiaskoehler@gmail.com",
+    email: "tobiassskoehler@gmail.com",
+    github: "github.com/TobiasKoehlerETH",
     linkedin: "www.linkedin.com/in/tkoehler-eth"
   },
   

@@ -12,9 +12,9 @@ import React from "react"
 import { 
   Calendar, 
   MapPin, 
-  Building2, 
   Phone, 
   Mail, 
+  Github,
   Linkedin,
   ExternalLink
 } from "lucide-react"
@@ -26,14 +26,12 @@ interface ContactInfoProps {
   dateOfBirth: string
   /** Physical address */
   address: string
-  /** City and postal code */
-  city: string
-  /** Country */
-  country: string
   /** Phone number */
   mobile: string
   /** Email address */
   email: string
+  /** GitHub profile URL */
+  github: string
   /** LinkedIn profile URL */
   linkedin: string
 }
@@ -41,10 +39,9 @@ interface ContactInfoProps {
 export const ContactInfo = ({
   dateOfBirth,
   address,
-  city,
-  country,
   mobile,
   email,
+  github,
   linkedin
 }: ContactInfoProps): React.ReactElement => {
   
@@ -65,18 +62,6 @@ export const ContactInfo = ({
       isClickable: false
     },
     { 
-      icon: Building2, 
-      label: "City", 
-      value: city,
-      isClickable: false
-    },
-    { 
-      icon: MapPin, 
-      label: "Country", 
-      value: country,
-      isClickable: false
-    },
-    { 
       icon: Phone, 
       label: "Mobile", 
       value: mobile,
@@ -89,6 +74,14 @@ export const ContactInfo = ({
       value: email,
       href: `mailto:${email}`,
       isClickable: true
+    },
+    { 
+      icon: Github, 
+      label: "GitHub", 
+      value: github,
+      href: `https://${github}`,
+      isClickable: true,
+      external: true
     },
     { 
       icon: Linkedin, 
@@ -138,10 +131,10 @@ export const ContactInfo = ({
               <LinkPreview
                 url={item.href}
                 className={
-                  "relative text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
+                  "relative block text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
                 }
               >
-                {item.value}
+                {content}
               </LinkPreview>
             </div>
           </div>

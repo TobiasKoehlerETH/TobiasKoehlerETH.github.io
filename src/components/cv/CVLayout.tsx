@@ -25,16 +25,18 @@ interface CVLayoutProps {
 
 export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="cv-screen min-h-screen bg-gray-50 py-8">
+      <div className="cv-shell max-w-6xl mx-auto px-4">
         {/* A4-like container with white background */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="p-8">
+        <div className="cv-page bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="cv-content p-8">
             {/* Header Section */}
             <CVHeader
               name={data.personal.name}
               title={data.personal.title}
               profileImage={data.personal.profileImage}
+              email={data.contact.email}
+              linkedinHref={`https://${data.contact.linkedin}`}
             />
             
             {/* Main Content Grid */}
@@ -84,10 +86,9 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
                   <ContactInfo
                     dateOfBirth={data.contact.dateOfBirth}
                     address={data.contact.address}
-                    city={data.contact.city}
-                    country={data.contact.country}
                     mobile={data.contact.mobile}
                     email={data.contact.email}
+                    github={data.contact.github}
                     linkedin={data.contact.linkedin}
                   />
                 </div>

@@ -45,7 +45,7 @@ export const ExperienceItem = ({
   projects
 }: ExperienceItemProps): React.ReactElement => {
   return (
-    <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+    <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-[#fafafa] hover:shadow-sm">
       <div className="relative z-10 rounded-lg">
       {/* Title and Organization */}
       <div className="mb-3">

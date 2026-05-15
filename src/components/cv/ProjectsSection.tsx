@@ -95,7 +95,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): React.React
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-150"
+                        className="inline-flex items-center gap-1 text-sm text-gray-700 hover:text-black hover:underline transition-colors duration-150"
                       >
                         View Project
                         <ExternalLink size={12} />
