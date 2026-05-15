@@ -221,14 +221,14 @@
     --cv-print-width: 72rem;
     --cv-print-page-width: 210mm;
     --cv-print-page-height: 297mm;
-    --cv-print-page-padding: 5mm;
+    --cv-print-page-padding: 0mm;
   }
 
   html,
   body {
     width: var(--cv-print-page-width) !important;
     height: var(--cv-print-page-height) !important;
-    background: #f9fafb !important;
+    background: #ffffff !important;
     overflow: hidden !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -239,7 +239,7 @@
     width: var(--cv-print-page-width) !important;
     height: var(--cv-print-page-height) !important;
     min-height: var(--cv-print-page-height) !important;
-    background: #f9fafb !important;
+    background: #ffffff !important;
     overflow: hidden !important;
     padding: var(--cv-print-page-padding) 0 !important;
   }
@@ -259,8 +259,9 @@
   .cv-page {
     background: white;
     color: inherit;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%) !important;
-    border-radius: 0.5rem !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
   }
 
