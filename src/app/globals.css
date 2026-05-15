@@ -138,15 +138,19 @@
 }
 
 .cv-inverted .cv-page {
-  background: #151922 !important;
+  background: #000000 !important;
   color: #e8eaef !important;
   box-shadow: 0 18px 60px rgb(0 0 0 / 45%) !important;
 }
 
 .cv-inverted .cv-page .bg-muted,
-.cv-inverted .cv-page .bg-gray-50,
-.cv-inverted .cv-page .hover\:bg-gray-50:hover {
+.cv-inverted .cv-page .bg-gray-50 {
   background-color: #202630 !important;
+}
+
+.cv-inverted .cv-page .hover\:bg-gray-50:hover,
+.cv-inverted .cv-page .hover\:bg-\[\#fafafa\]:hover {
+  background-color: transparent !important;
 }
 
 .cv-inverted .cv-page .bg-black {
@@ -203,7 +207,7 @@
 }
 
 .cv-inverted .cv-page .hover\:shadow-sm:hover {
-  box-shadow: 0 10px 32px rgb(0 0 0 / 28%) !important;
+  box-shadow: none !important;
 }
 
 .cv-inverted .cv-page .cv-profile-image {
