@@ -23,6 +23,8 @@ interface ExperienceItemProps {
   isCurrent?: boolean
   /** Optional website URL for the organization */
   website?: string
+  /** Optional project links shown below the description */
+  links?: Array<{ title: string; url: string }>
 }
 
 export const ExperienceItem = ({
@@ -31,7 +33,8 @@ export const ExperienceItem = ({
   period,
   description,
   isCurrent = false,
-  website
+  website,
+  links
 }: ExperienceItemProps): React.ReactElement => {
   return (
     <div className={`mb-6 last:mb-0 relative p-4 -m-4 transition-all duration-150 hover:shadow-sm ${
@@ -127,6 +130,21 @@ export const ExperienceItem = ({
               )
             })}
           </div>
+        </div>
+      )}
+
+      {/* Project links */}
+      {links && links.length > 0 && (
+        <div className="mt-2 ml-6 text-sm leading-relaxed text-gray-700">
+          Projects:
+          {links.map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+              <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline px-2 py-1 transition-all duration-200">
+                {link.title}
+                <ExternalLink size={12} />
+              </span>
+            </a>
+          ))}
         </div>
       )}
       </div>

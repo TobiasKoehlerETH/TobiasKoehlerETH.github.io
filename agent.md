@@ -10,7 +10,7 @@ structure. Content changes belong in `src/data/cvData.ts` only.
 - Font: Sora (`font-sans`), Geist Mono for small labels (`font-mono`).
 - Section headers are solid black bars (`CVSection`).
 - Interactions stay subtle and fast (150–200 ms): tint, `shadow-sm`, underline grow.
-- Project images keep their colours; the Projects tab sits on `BackgroundBoxes`.
+- Project images keep their colours; the Projects tab has a plain white background.
 - Keep dependencies minimal: plain Tailwind classes, no UI kits or animation libraries.
 
 ## Gotchas

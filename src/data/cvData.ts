@@ -26,7 +26,7 @@ export interface CVData {
     level: number
   }>
   skills: SkillGroup[]
-  githubProjects: GitHubProject[]
+  githubProjects: Project[]
 }
 
 export interface CVEntry {
@@ -38,6 +38,8 @@ export interface CVEntry {
   /** Highlights the entry as the current position */
   isCurrent?: boolean
   website?: string
+  /** Project links shown below the description */
+  links?: Array<{ title: string; url: string }>
 }
 
 export interface SkillGroup {
@@ -45,7 +47,7 @@ export interface SkillGroup {
   items: string[]
 }
 
-export interface GitHubProject {
+export interface Project {
   /** Repository name under the GitHub profile */
   name: string
   /** One short sentence */
@@ -77,7 +79,13 @@ export const cvData: CVData = {
       period: "05/2024 - today",
       isCurrent: true,
       website: "https://www.angst-pfister.com",
-      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design"
+      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design",
+      links: [
+        {
+          title: "Sensing Materials",
+          url: "https://sensorsandpower.angst-pfister.com/en/products/sensing-materials/sensing-materials/"
+        }
+      ]
     },
     {
       title: "Intern Development Engineer",

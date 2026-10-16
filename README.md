@@ -22,7 +22,8 @@ Pushing to `main` builds and deploys to GitHub Pages via
 All content lives in [`src/data/cvData.ts`](src/data/cvData.ts):
 
 - `experience` / `education`: one bullet per line in `description`; a line starting with
-  `Publication:` followed by a URL renders as a link. `isCurrent` highlights the entry.
+  `Publication:` followed by a URL renders as a link. `links` adds project links below the
+  bullets, and `isCurrent` highlights the entry.
 - `skills`: grouped into Hardware, Firmware, Software and AI.
 - `languages`: level from 1 to 5.
 - `githubProjects`: repositories shown in the Projects tab (`name` must match the repo name,
@@ -39,8 +40,8 @@ src/
 │   ├── page.tsx         # renders CVLayout with cvData
 │   ├── icon.svg         # favicon (black square)
 │   └── globals.css      # theme tokens, dark mode overrides, A4 print layout
-├── components/cv/       # CVLayout, CVHeader, CVTabs, BackgroundBoxes, CVSection,
-│                        # ExperienceItem, ContactInfo, SkillsSection
+├── components/cv/       # CVLayout, CVHeader, CVTabs, CVSection, ExperienceItem,
+│                        # ContactInfo, SkillsSection
 └── data/cvData.ts       # CV content
 public/
 ├── profile.jpg

@@ -42,6 +42,7 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
               description={exp.description}
               isCurrent={exp.isCurrent}
               website={exp.website}
+              links={exp.links}
             />
           ))}
         </CVSection>

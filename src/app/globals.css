@@ -116,14 +116,6 @@
   color: #ffffff !important;
 }
 
-.cv-inverted .cv-page .border-gray-100 {
-  border-color: #161b22 !important;
-}
-
-.cv-inverted .cv-page .hover\:bg-black:hover {
-  background-color: #e8eaef !important;
-}
-
 .cv-inverted .cv-page .border-gray-200 {
   border-color: #374151 !important;
 }

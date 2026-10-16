@@ -13,19 +13,18 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { ArrowUpRight, Github } from "lucide-react"
-import { GitHubProject } from "@/data/cvData"
-import { BackgroundBoxes } from "./BackgroundBoxes"
+import { Project } from "@/data/cvData"
 
 interface CVTabsProps {
   /** The CV content shown in the first tab */
   cv: React.ReactNode
   /** Curated GitHub repositories */
-  projects: GitHubProject[]
+  projects: Project[]
   /** GitHub profile URL, used for repository links */
   githubUrl: string
 }
 
-const ProjectCard = ({ project, href }: { project: GitHubProject; href: string }) => (
+const ProjectCard = ({ project, href }: { project: Project; href: string }) => (
   <a
     href={href}
     target="_blank"
@@ -73,14 +72,13 @@ export const CVTabs = ({ cv, projects, githubUrl }: CVTabsProps): React.ReactEle
       {/* CV stays in the DOM so printing always outputs it */}
       <div className={tab === "cv" ? "" : "hidden print:block"}>{cv}</div>
 
-      <div className={tab === "projects" ? "relative -mx-8 -mb-8 overflow-hidden px-8 pb-8 animate-in fade-in duration-200 print:hidden" : "hidden"}>
-        <BackgroundBoxes />
-        <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={tab === "projects" ? "animate-in fade-in duration-200 print:hidden" : "hidden"}>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.name} project={project} href={`${githubUrl}/${project.name}`} />
           ))}
         </div>
-        <div className="relative mt-6 flex justify-end">
+        <div className="mt-6 flex justify-end">
           <a href={githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-sm font-medium text-gray-600 transition-colors duration-150 hover:text-black">
             <Github size={16} />
             All repositories on GitHub
