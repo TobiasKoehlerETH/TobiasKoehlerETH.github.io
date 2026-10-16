@@ -12,13 +12,11 @@ import React from "react"
 import { 
   Calendar, 
   MapPin, 
-  Phone, 
   Mail, 
   Github,
   Linkedin,
   ExternalLink
 } from "lucide-react"
-import { LinkPreview } from "@/components/ui/link-preview"
 import { InteractiveLink } from "@/components/ui/interactive-link"
 
 interface ContactInfoProps {
@@ -26,8 +24,6 @@ interface ContactInfoProps {
   dateOfBirth: string
   /** Physical address */
   address: string
-  /** Phone number */
-  mobile: string
   /** Email address */
   email: string
   /** GitHub profile URL */
@@ -39,7 +35,6 @@ interface ContactInfoProps {
 export const ContactInfo = ({
   dateOfBirth,
   address,
-  mobile,
   email,
   github,
   linkedin
@@ -60,13 +55,6 @@ export const ContactInfo = ({
       label: "Address", 
       value: address,
       isClickable: false
-    },
-    { 
-      icon: Phone, 
-      label: "Mobile", 
-      value: mobile,
-      href: `tel:${mobile}`,
-      isClickable: true
     },
     { 
       icon: Mail, 
@@ -126,23 +114,25 @@ export const ContactInfo = ({
     if (item.isClickable && item.href) {
       if (item.external) {
         return (
-          <div key={index} className="relative block rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
-            <div className="relative z-10 rounded-lg p-1 -m-1">
-              <LinkPreview
-                url={item.href}
+          <div key={index} className="relative block p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+            <div className="relative z-10 p-1 -m-1">
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
                 className={
-                  "relative block text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
+                  "relative block text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
                 }
               >
                 {content}
-              </LinkPreview>
+              </a>
             </div>
           </div>
         )
       } else {
         return (
-          <div key={index} className="relative rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
-            <InteractiveLink href={item.href} className="relative z-10 block rounded-lg p-1 -m-1">
+          <div key={index} className="relative p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+            <InteractiveLink href={item.href} className="relative z-10 block p-1 -m-1">
               {content}
             </InteractiveLink>
           </div>
@@ -151,8 +141,8 @@ export const ContactInfo = ({
     }
 
     return (
-      <div key={index} className="relative rounded-lg p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
-        <div className="relative z-10 rounded-lg p-1 -m-1">
+      <div key={index} className="relative p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
+        <div className="relative z-10 p-1 -m-1">
           {content}
         </div>
       </div>

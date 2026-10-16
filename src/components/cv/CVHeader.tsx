@@ -117,7 +117,7 @@ export const CVHeader = ({
       
       {/* Profile Image */}
       <div className="flex justify-center lg:justify-end">
-        <div className="h-32 w-32 overflow-hidden rounded-full bg-primary/10 text-primary transition-transform duration-150 hover:scale-[1.01] hover:[transform:rotate(0.3deg)] hover:ring-2 hover:ring-gray-300 lg:h-40 lg:w-40">
+        <div className="h-32 w-32 overflow-hidden bg-primary/10 text-primary transition-transform duration-150 hover:scale-[1.01] hover:[transform:rotate(0.3deg)] hover:ring-2 hover:ring-gray-300 lg:h-40 lg:w-40">
           {profileImage ? (
             <Image
               src={profileImage}

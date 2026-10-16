@@ -10,7 +10,6 @@
 
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
-import { LinkPreview } from "@/components/ui/link-preview"
 import { ProjectsSection } from "./ProjectsSection"
 
 interface ExperienceItemProps {
@@ -45,13 +44,13 @@ export const ExperienceItem = ({
   projects
 }: ExperienceItemProps): React.ReactElement => {
   return (
-    <div className="mb-6 last:mb-0 relative rounded-lg p-4 -m-4 transition-all duration-150 hover:bg-[#fafafa] hover:shadow-sm">
-      <div className="relative z-10 rounded-lg">
+    <div className="mb-6 last:mb-0 relative p-4 -m-4 transition-all duration-150 hover:bg-[#fafafa] hover:shadow-sm">
+      <div className="relative z-10">
       {/* Title and Organization */}
       <div className="mb-3">
         <div className="flex items-start gap-3 mb-2">
           <div className="flex-shrink-0 mt-1">
-            <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            <div className={`w-3 h-3 transition-all duration-300 ${
               isCurrent 
                 ? 'bg-black shadow-lg' 
                 : 'bg-gray-500'
@@ -61,7 +60,7 @@ export const ExperienceItem = ({
             <h4 className="text-lg font-semibold text-gray-800 mb-1">
               {title}
               {isCurrent && (
-                <span className="ml-2 text-xs bg-gray-200 text-gray-800 px-2 py-1 rounded-full font-medium">
+                <span className="ml-2 text-xs bg-gray-200 text-gray-800 px-2 py-1 font-medium">
                   Current
                 </span>
               )}
@@ -119,12 +118,12 @@ export const ExperienceItem = ({
                 return (
                   <div key={index} className="leading-relaxed">
                     {beforeUrl}
-                    <LinkPreview url={fullUrl}>
-                      <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline px-2 py-1 rounded transition-all duration-200">
+                    <a href={fullUrl} target="_blank" rel="noreferrer">
+                      <span className="inline-flex items-center gap-1 text-black font-semibold hover:underline px-2 py-1 transition-all duration-200">
                         View Publication
                         <ExternalLink size={12} />
                       </span>
-                    </LinkPreview>
+                    </a>
                   </div>
                 )
               }

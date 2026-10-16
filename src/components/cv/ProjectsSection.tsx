@@ -81,7 +81,7 @@ export const ProjectsSection = ({ projects }: ProjectsSectionProps): React.React
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 rounded-md font-medium"
+                          className="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-700 font-medium"
                         >
                           {tech}
                         </span>

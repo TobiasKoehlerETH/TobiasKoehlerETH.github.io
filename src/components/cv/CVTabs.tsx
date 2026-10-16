@@ -1,0 +1,91 @@
+"use client"
+
+/**
+ * CV Tabs Component
+ *
+ * Switches the page body between the CV grid and a GitHub projects overview.
+ * Printing always outputs the CV tab.
+ *
+ * @component CVTabs
+ * @returns {React.ReactElement} Tab bar plus the active view
+ */
+
+import React, { useState } from "react"
+import { ArrowUpRight, Github } from "lucide-react"
+import { GitHubProject } from "@/data/cvData"
+
+interface CVTabsProps {
+  /** The CV content shown in the first tab */
+  cv: React.ReactNode
+  /** Curated GitHub repositories */
+  projects: GitHubProject[]
+  /** GitHub profile URL, used for repository links */
+  githubUrl: string
+}
+
+const ProjectCard = ({ project, href }: { project: GitHubProject; href: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="group flex h-full flex-col justify-between border border-gray-200 bg-white p-5 transition-all duration-150 hover:border-black hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+  >
+    <div>
+      <div className="mb-3 flex items-start justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">
+        <span>{project.category}</span>
+        <ArrowUpRight size={16} className="shrink-0 text-gray-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black" />
+      </div>
+      <h4 className="text-lg font-semibold text-gray-900">{project.name}</h4>
+      <p className="mt-1 text-sm leading-snug text-gray-600">{project.description}</p>
+    </div>
+    <div className="mt-4 flex flex-wrap gap-1.5">
+      {project.tech.map((tech) => (
+        <span key={tech} className="bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700">{tech}</span>
+      ))}
+    </div>
+  </a>
+)
+
+export const CVTabs = ({ cv, projects, githubUrl }: CVTabsProps): React.ReactElement => {
+  const [tab, setTab] = useState<"cv" | "projects">("cv")
+
+  const tabClass = (active: boolean) =>
+    `flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30 ${
+      active ? "bg-black text-white" : "text-gray-600 hover:text-black"
+    }`
+
+  return (
+    <>
+      <div role="tablist" className="cv-tabs mb-8 flex border-b-2 border-black print:hidden">
+        <button type="button" role="tab" aria-selected={tab === "cv"} onClick={() => setTab("cv")} className={tabClass(tab === "cv")}>
+          CV
+        </button>
+        <button type="button" role="tab" aria-selected={tab === "projects"} onClick={() => setTab("projects")} className={tabClass(tab === "projects")}>
+          <Github size={16} />
+          Projects
+          <span className={`px-1.5 text-xs ${tab === "projects" ? "bg-white text-black" : "bg-gray-200 text-gray-800"}`}>
+            {projects.length}
+          </span>
+        </button>
+      </div>
+
+      {/* CV stays in the DOM so printing always outputs it */}
+      <div className={tab === "cv" ? "" : "hidden print:block"}>{cv}</div>
+
+      <div className={tab === "projects" ? "animate-in fade-in duration-200 print:hidden" : "hidden"}>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard key={project.name} project={project} href={`${githubUrl}/${project.name}`} />
+          ))}
+        </div>
+        <div className="mt-6 flex justify-end">
+          <a href={githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-sm font-medium text-gray-600 transition-colors duration-150 hover:text-black">
+            <Github size={16} />
+            All repositories on GitHub
+            <ArrowUpRight size={14} className="transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        </div>
+      </div>
+    </>
+  )
+}

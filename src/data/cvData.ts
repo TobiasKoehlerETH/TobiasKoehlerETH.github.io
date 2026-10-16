@@ -17,7 +17,6 @@ export interface CVData {
     dateOfBirth: string
     address: string
     city: string
-    mobile: string
     email: string
     github: string
     linkedin: string
@@ -53,8 +52,31 @@ export interface CVData {
     language: string
     level: number
   }>
-  technicalSkills: string[]
+  skills: SkillGroup[]
   hobbies: string[]
+  githubProjects: GitHubProject[]
+}
+
+export interface SkillGroup {
+  area: "Hardware" | "Firmware" | "Software" | "AI"
+  items: string[]
+}
+
+export interface GitHubProject {
+  /** Repository name on GitHub */
+  name: string
+  /** One-line pitch */
+  tagline: string
+  /** Short paragraph explaining what it does */
+  description: string
+  category: "CAD & Fabrication" | "Instrumentation" | "Embedded" | "Tooling"
+  /** Primary language as reported by GitHub */
+  language: string
+  tech: string[]
+  /** Last push, YYYY-MM */
+  updated: string
+  /** Shown prominently in project showcases */
+  featured?: boolean
 }
 
 /**
@@ -73,7 +95,6 @@ export const cvData: CVData = {
     dateOfBirth: "17.12.1999",
     address: "8400 Winterthur, Switzerland",
     city: "",
-    mobile: "",
     email: "tobiassskoehler@gmail.com",
     github: "github.com/TobiasKoehlerETH",
     linkedin: "www.linkedin.com/in/tkoehler-eth"
@@ -132,22 +153,158 @@ export const cvData: CVData = {
   languages: [
     { language: "German", level: 5 },
     { language: "English", level: 4 },
-    { language: "French", level: 3 },
+    { language: "French", level: 2 },
     { language: "Italian", level: 3 }
   ],
   
-  technicalSkills: [
-    "CAD Design and Simulations in NX, SolidWorks, COMSOL and Ansys",
-    "Programming with C++, Python, TypeScript and MATLAB",
-    "Manufacturing technology: Turning, CNC milling, MIG/MAG welding and additive manufacturing (3D printing)",
-    "Mechatronics",
-    "PCB Design with KiCad",
-    "MATLAB and Simulink"
+  skills: [
+    {
+      area: "Hardware",
+      items: [
+        "CAD design in NX and SolidWorks",
+        "FEA (Finite Element Analysis)",
+        "PCB design with KiCad",
+        "Sensor development, testing and validation",
+        "Manufacturing: turning, CNC milling, MIG/MAG welding, 3D printing"
+      ]
+    },
+    {
+      area: "Firmware",
+      items: [
+        "MCU firmware",
+        "Drivers",
+        "Digital signal processing"
+      ]
+    },
+    {
+      area: "Software",
+      items: [
+        "Database applications",
+        "Sensor software",
+        "Automation tools",
+        "Data analysis"
+      ]
+    },
+    {
+      area: "AI",
+      items: [
+        "Coding agents",
+        "Hardware in the loop",
+        "Custom skills and automations",
+        "Automated CAD, PCB and firmware development"
+      ]
+    }
   ],
   
   hobbies: [
     "Football",
     "Fitness", 
     "Nutrition"
+  ],
+
+  githubProjects: [
+    {
+      name: "MoldMaker",
+      tagline: "STEP part in, printable silicone mold out",
+      description: "Desktop app that turns a finished part's STEP file into a two-part RTV silicone injection mold: auto-orientation, shrinkage-compensated cavity, clamping holes, gate and vents, exported as STEP.",
+      category: "CAD & Fabrication",
+      language: "TypeScript",
+      tech: ["Tauri", "Rust", "OpenCascade", "Vite"],
+      updated: "2026-09",
+      featured: true
+    },
+    {
+      name: "StencilPrint",
+      tagline: "3D-printable solder stencils from Gerber files",
+      description: "Turns a solder-paste Gerber and the board's Edge.Cuts outline into a board-aware, 3D-printable stencil model.",
+      category: "CAD & Fabrication",
+      language: "Rust",
+      tech: ["Tauri", "Rust", "Gerber"],
+      updated: "2026-09",
+      featured: true
+    },
+    {
+      name: "analog-logic",
+      tagline: "Oscilloscope and protocol decoder for Analog Discovery 3",
+      description: "Windows desktop oscilloscope that streams both analog inputs, renders min/max waveform envelopes and decodes digital protocols from the same capture.",
+      category: "Instrumentation",
+      language: "TypeScript",
+      tech: ["Tauri 2", "Rust", "React", "uPlot", "sigrok"],
+      updated: "2026-09",
+      featured: true
+    },
+    {
+      name: "imu-fft",
+      tagline: "Live IMU charts with FFT and 3D orientation",
+      description: "Desktop app for a high-rate ICM-42688-P UART stream: live acceleration plots, FFT peak readout and a 3D orientation model, with a simulation fallback.",
+      category: "Instrumentation",
+      language: "Rust",
+      tech: ["Tauri 2", "Rust", "Serial", "FFT"],
+      updated: "2026-05",
+      featured: true
+    },
+    {
+      name: "auto-drawing",
+      tagline: "Technical drawings generated from 3D models",
+      description: "Automatic drawing creation from STEP files with a browser-based editor and HTML/SVG/PDF export.",
+      category: "CAD & Fabrication",
+      language: "Python",
+      tech: ["Python", "FastAPI", "React", "three.js"],
+      updated: "2026-04"
+    },
+    {
+      name: "balance-lab",
+      tagline: "Sphere-on-platform balancing game",
+      description: "Visualizes a rolling sphere on a tilting platform driven by live serial telemetry from the physical rig.",
+      category: "Instrumentation",
+      language: "TypeScript",
+      tech: ["Electron", "React", "Three.js", "serialport"],
+      updated: "2026-10"
+    },
+    {
+      name: "mdc0x_driver",
+      tagline: "Embassy driver for the MDC04 capacitive sensor",
+      description: "STM32G030 firmware that configures up to three MDC04 capacitance-to-digital converters and streams samples over UART.",
+      category: "Embedded",
+      language: "Rust",
+      tech: ["Rust", "Embassy", "STM32", "I2C"],
+      updated: "2026-04"
+    },
+    {
+      name: "icm42688p_driver",
+      tagline: "High-rate ICM-42688-P FIFO streamer",
+      description: "Minimal STM32G031 firmware reading accelerometer FIFO bursts and emitting a compact binary UART stream.",
+      category: "Embedded",
+      language: "Rust",
+      tech: ["Rust", "STM32", "I2C", "UART"],
+      updated: "2026-04"
+    },
+    {
+      name: "kicad-automation",
+      tagline: "Windows helpers for KiCad projects",
+      description: "PowerShell utilities for renaming KiCad project sets and applying schematic styling and drawing sheets.",
+      category: "Tooling",
+      language: "PowerShell",
+      tech: ["PowerShell", "KiCad"],
+      updated: "2026-09"
+    },
+    {
+      name: "StencilSucker",
+      tagline: "Vacuum-powered PCB stencil fixture",
+      description: "3D-printable stencil fixture: a vacuum compresses springs that lift the stencil cleanly once printing is done.",
+      category: "CAD & Fabrication",
+      language: "SolidWorks",
+      tech: ["SolidWorks", "3D printing"],
+      updated: "2024-09"
+    },
+    {
+      name: "trello-ppt",
+      tagline: "Trello board to weekly status slide",
+      description: "Generates a PowerPoint status summary from a Trello kanban board, with completed cards and importance colours.",
+      category: "Tooling",
+      language: "Python",
+      tech: ["Python", "Trello API", "python-pptx"],
+      updated: "2026-06"
+    }
   ]
 }

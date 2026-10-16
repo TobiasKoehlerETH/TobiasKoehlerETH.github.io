@@ -1,7 +1,7 @@
 /**
  * CV Section Component
  * 
- * Reusable section component with black header with rounded corners
+ * Reusable section component with square black header
  * Provides consistent styling for all CV sections
  * 
  * @component CVSection
@@ -26,8 +26,8 @@ export const CVSection = ({
 }: CVSectionProps): React.ReactElement => {
   return (
     <div className={`mb-8 ${className}`}>
-      {/* Black Header with small rounded corners and subtle underline animation */}
-      <div className="group bg-black text-white px-4 py-2 mb-4 rounded-md">
+      {/* Square black header with subtle underline animation */}
+      <div className="group bg-black text-white px-4 py-2 mb-4">
         <h3 className="relative inline-block text-lg font-semibold">
           {title}
           <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-150 group-hover:w-full" />

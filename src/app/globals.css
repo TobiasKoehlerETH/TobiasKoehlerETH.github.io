@@ -6,7 +6,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jost);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -44,7 +44,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -198,6 +198,15 @@
   color: #ffffff !important;
 }
 
+.cv-inverted .cv-page .border-black,
+.cv-inverted .cv-page .hover\:border-black:hover {
+  border-color: #e8eaef !important;
+}
+
+.cv-inverted .cv-page .group:hover .group-hover\:text-black {
+  color: #ffffff !important;
+}
+
 .cv-inverted .cv-page .border-gray-200 {
   border-color: #374151 !important;
 }
@@ -283,13 +292,13 @@
     margin-bottom: 0 !important;
   }
 
-  .cv-content > .grid {
+  .cv-main-grid {
     display: grid !important;
     gap: 2rem !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
-  .cv-content > .grid > .lg\:col-span-2 {
+  .cv-main-grid > .lg\:col-span-2 {
     grid-column: span 2 / span 2 !important;
   }
 
