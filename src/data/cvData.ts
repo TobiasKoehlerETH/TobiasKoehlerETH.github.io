@@ -60,7 +60,7 @@ export interface Project {
 export const cvData: CVData = {
   personal: {
     name: "Tobias Köhler",
-    title: "M.Sc. Mechanical Engineer ETH",
+    title: "M.Sc. Mechanical Engineering ETH",
     profileImage: "/profile.jpg"
   },
   
