@@ -44,12 +44,16 @@ export const ExperienceItem = ({
   projects
 }: ExperienceItemProps): React.ReactElement => {
   return (
-    <div className="mb-6 last:mb-0 relative p-4 -m-4 transition-all duration-150 hover:bg-[#fafafa] hover:shadow-sm">
+    <div className={`mb-6 last:mb-0 relative p-4 -m-4 transition-all duration-150 hover:shadow-sm ${
+      isCurrent
+        ? 'cv-current border-l-4 border-black bg-gray-50 pl-3'
+        : 'hover:bg-[#fafafa]'
+    }`}>
       <div className="relative z-10">
       {/* Title and Organization */}
       <div className="mb-3">
         <div className="flex items-start gap-3 mb-2">
-          <div className="flex-shrink-0 mt-1">
+          <div className="flex-shrink-0 mt-2">
             <div className={`w-3 h-3 transition-all duration-300 ${
               isCurrent 
                 ? 'bg-black shadow-lg' 
@@ -60,7 +64,8 @@ export const ExperienceItem = ({
             <h4 className="text-lg font-semibold text-gray-800 mb-1">
               {title}
               {isCurrent && (
-                <span className="ml-2 text-xs bg-gray-200 text-gray-800 px-2 py-1 font-medium">
+                <span className="ml-3 inline-flex items-center gap-1.5 bg-black px-2 py-1 align-middle text-[10px] font-semibold uppercase tracking-[0.15em] text-white">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 animate-pulse bg-white" />
                   Current
                 </span>
               )}

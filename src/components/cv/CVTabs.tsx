@@ -61,11 +61,7 @@ export const CVTabs = ({ cv, projects, githubUrl }: CVTabsProps): React.ReactEle
           CV
         </button>
         <button type="button" role="tab" aria-selected={tab === "projects"} onClick={() => setTab("projects")} className={tabClass(tab === "projects")}>
-          <Github size={16} />
           Projects
-          <span className={`px-1.5 text-xs ${tab === "projects" ? "bg-white text-black" : "bg-gray-200 text-gray-800"}`}>
-            {projects.length}
-          </span>
         </button>
       </div>
 

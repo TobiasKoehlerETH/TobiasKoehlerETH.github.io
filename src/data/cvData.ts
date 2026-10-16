@@ -132,7 +132,7 @@ export const cvData: CVData = {
       organization: "ETH Zurich",
       period: "09/2022 - 03/2024",
       website: "https://ethz.ch",
-      description: "Multiphysics simulation, learning, additive manufacturing and optimization problems\nSemester thesis at startup diaxxo\nGrade 6.0 'Disinfection Mechanism of a PCR Device'\nMaster thesis at Balgrist University Hospital 'Textile Sensors for Diabetic Patients'\nPublication: https://xploreqa.ieee.org/document/10914107"
+      description: "Multiphysics simulation, machine learning, additive manufacturing and optimization problems\nSemester thesis at startup diaxxo\nGrade 6.0 'Disinfection Mechanism of a PCR Device'\nMaster thesis at Balgrist University Hospital 'Textile Sensors for Diabetic Patients'\nPublication: https://xploreqa.ieee.org/document/10914107"
     },
     {
       title: "Bachelor of Science Mechanical Engineering ETH",
@@ -153,8 +153,8 @@ export const cvData: CVData = {
   languages: [
     { language: "German", level: 5 },
     { language: "English", level: 4 },
-    { language: "French", level: 2 },
-    { language: "Italian", level: 3 }
+    { language: "Italian", level: 3 },
+    { language: "French", level: 2 }
   ],
   
   skills: [
@@ -165,7 +165,7 @@ export const cvData: CVData = {
         "FEA (Finite Element Analysis)",
         "PCB design with KiCad",
         "Sensor development, testing and validation",
-        "Manufacturing: turning, CNC milling, MIG/MAG welding, 3D printing"
+        "Manufacturing: turning, CNC milling, injection molding, 3D printing"
       ]
     },
     {
