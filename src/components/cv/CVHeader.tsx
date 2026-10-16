@@ -4,7 +4,6 @@
  * CV Header Component
  * 
  * Displays the main header section with name, title, and profile image
- * Matches the original German CV layout with English translations
  * 
  * @component CVHeader
  * @returns {JSX.Element} The CV header section

@@ -1,69 +1,26 @@
-# Project Overview
+# Agent Notes
 
-This repository contains a personal CV website for Tobias Köhler. It is built using modern web technologies to be performant, easily maintainable, and visually appealing.
+Personal CV site (Next.js 15 static export, Tailwind CSS 4). See `README.md` for commands and
+structure. Content changes belong in `src/data/cvData.ts` only.
 
-## Tech Stack
+## Design rules
 
-- **Framework**: [Next.js](https://nextjs.org/) (with Turbopack)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: Custom components and utilities from `clsx`, `tailwind-merge`, and `lucide-react`.
+- Black and white, minimal text, technical look. No accent colours.
+- No rounded corners anywhere: do not add `rounded-*` classes; markers and dots are squares.
+- Font: Sora (`font-sans`), Geist Mono for small labels (`font-mono`).
+- Section headers are solid black bars (`CVSection`).
+- Interactions stay subtle and fast (150–200 ms): tint, `shadow-sm`, underline grow.
+- Project images keep their colours; the Projects tab sits on `BackgroundBoxes`.
+- Keep dependencies minimal: plain Tailwind classes, no UI kits or animation libraries.
 
-## Project Structure
+## Gotchas
 
-The project follows a standard Next.js `src` directory structure.
-
-- `src/app/`: Contains the main application logic, layout, and pages.
-  - `page.tsx`: The main entry point that renders the CV.
-  - `layout.tsx`: The root layout for the application.
-  - `globals.css`: Global styles for the application.
-- `src/components/`: Reusable React components.
-  - `cv/`: Components specifically for the CV layout (e.g., `CVHeader`, `ExperienceItem`).
-  - `ui/`: General-purpose UI components (e.g., `Button`, `Card`).
-- `src/data/`: a centralized data management.
-  - `cvData.ts`: A single file containing all the CV data, making it easy to update the content without touching the code.
-- `src/lib/`: Utility functions.
-  - `utils.ts`: a file containing helper functions.
-
-## Getting Started
-
-1.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-2.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## To-Do List
-
-- [ ] Add a profile image to the `public` folder and update the path in `src/data/cvData.ts`.
-- [ ] Implement a theme switcher (light/dark mode).
-- [ ] Add a print-friendly version of the CV.
-- [ ] Add animations and transitions to improve the user experience.
-
-## Design Notes – Subtle Interactivity (Hover/Focus)
-
-Principles:
-- Keep motion subtle, fast (150–200ms), and reversible.
-- Always mirror hover with accessible `:focus-visible` states.
-- Respect `prefers-reduced-motion: reduce` and degrade to color/underline only.
-
-## Interaction Backlog (Prioritized)
-
-- [ ] P0 — Standardize link micro-interactions (`InteractiveLink` styles) across all anchors
-- [ ] P0 — Card/list item hover for `ExperienceItem` and skills rows: soft tint + shadow-sm
-- [ ] P0 — Strong, accessible focus-visible ring tokens across the site
-- [ ] P1 — Section header underline grow on hover (accent underline animation)
-- [ ] P1 — Contact links: subtle underline-in and icon fade-in
-- [ ] P1 — Profile image: 1% scale + 0.3deg tilt + soft ring on hover/focus
-- [ ] P2 — Staggered fade-in on scroll (IntersectionObserver + reduced motion guard)
-
-## Handoff / Implementation Notes
-
-- Create utility classes/components instead of scattering Tailwind classes (e.g., `InteractiveLink`, `CardHover`).
-- Use data attributes like `data-intent="interactive"` to opt-in per component.
-- Add a single CSS block in `globals.css` to gate animations by `@media (prefers-reduced-motion: reduce)`.
-- Roll out incrementally: links → cards → headers → optional image motion.
+- Dark mode is the `cv-inverted` class on `<html>` (toggled in `CVHeader`). It remaps the
+  gray/black/white utility classes in `globals.css`, so prefer those classes over custom
+  colours, and add an override there when introducing a new one.
+- Printing (the PDF download) relies on `.cv-main-grid` and `.cv-content` in the print block of
+  `globals.css`, and must stay on one A4 page. Check `npm run build` + print preview after
+  layout changes.
+- `CVTabs` keeps the CV grid mounted (hidden) while Projects is open, so printing always
+  outputs the CV.
+- The site is a static export (`output: "export"`): no server features, images are unoptimized.

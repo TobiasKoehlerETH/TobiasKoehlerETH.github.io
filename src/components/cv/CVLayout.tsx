@@ -2,7 +2,7 @@
  * CV Layout Component
  * 
  * Main layout component that combines all CV sections
- * Replicates the exact structure and styling of the original German CV
+ * Header, CV / Projects tabs, and the two-column CV grid on an A4-like sheet
  * Uses responsive design for mobile and desktop viewing
  * 
  * @component CVLayout
@@ -42,7 +42,6 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
               description={exp.description}
               isCurrent={exp.isCurrent}
               website={exp.website}
-              projects={exp.projects}
             />
           ))}
         </CVSection>
@@ -57,7 +56,6 @@ export const CVLayout = ({ data }: CVLayoutProps): React.ReactElement => {
               period={edu.period}
               description={edu.description}
               website={edu.website}
-              projects={edu.projects}
             />
           ))}
         </CVSection>

@@ -2,7 +2,6 @@
  * Experience Item Component
  * 
  * Displays individual work experience or education entries with hover effects
- * Matches the layout and styling of the original German CV
  * 
  * @component ExperienceItem
  * @returns {React.ReactElement} A formatted experience entry
@@ -10,7 +9,6 @@
 
 import React from "react"
 import { Calendar, Building, ExternalLink } from "lucide-react"
-import { ProjectsSection } from "./ProjectsSection"
 
 interface ExperienceItemProps {
   /** Job title or degree name */
@@ -25,13 +23,6 @@ interface ExperienceItemProps {
   isCurrent?: boolean
   /** Optional website URL for the organization */
   website?: string
-  /** Optional projects for this experience */
-  projects?: Array<{
-    name: string
-    description: string
-    technologies?: string[]
-    link?: string
-  }>
 }
 
 export const ExperienceItem = ({
@@ -40,13 +31,12 @@ export const ExperienceItem = ({
   period,
   description,
   isCurrent = false,
-  website,
-  projects
+  website
 }: ExperienceItemProps): React.ReactElement => {
   return (
     <div className={`mb-6 last:mb-0 relative p-4 -m-4 transition-all duration-150 hover:shadow-sm ${
       isCurrent
-        ? 'cv-current border-l-4 border-black bg-gray-50 pl-3'
+        ? 'border-l-4 border-black bg-gray-50 pl-3'
         : 'hover:bg-[#fafafa]'
     }`}>
       <div className="relative z-10">
@@ -140,7 +130,6 @@ export const ExperienceItem = ({
         </div>
       )}
       </div>
-      {projects && <ProjectsSection projects={projects} />}
     </div>
   )
 }

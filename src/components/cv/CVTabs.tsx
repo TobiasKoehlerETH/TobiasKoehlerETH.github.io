@@ -11,8 +11,10 @@
  */
 
 import React, { useState } from "react"
+import Image from "next/image"
 import { ArrowUpRight, Github } from "lucide-react"
 import { GitHubProject } from "@/data/cvData"
+import { BackgroundBoxes } from "./BackgroundBoxes"
 
 interface CVTabsProps {
   /** The CV content shown in the first tab */
@@ -28,20 +30,23 @@ const ProjectCard = ({ project, href }: { project: GitHubProject; href: string }
     href={href}
     target="_blank"
     rel="noreferrer"
-    className="group flex h-full flex-col justify-between border border-gray-200 bg-white p-5 transition-all duration-150 hover:border-black hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+    className="group flex h-full flex-col border border-gray-200 bg-white transition-all duration-150 hover:border-black hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
   >
-    <div>
-      <div className="mb-3 flex items-start justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">
-        <span>{project.category}</span>
-        <ArrowUpRight size={16} className="shrink-0 text-gray-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black" />
-      </div>
-      <h4 className="text-lg font-semibold text-gray-900">{project.name}</h4>
-      <p className="mt-1 text-sm leading-snug text-gray-600">{project.description}</p>
+    <div className="relative aspect-[16/10] overflow-hidden border-b border-gray-200 bg-gray-100">
+      <Image
+        src={project.image}
+        alt={`${project.name} preview`}
+        fill
+        sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
+        className="object-cover transition duration-300 group-hover:scale-[1.02]"
+      />
     </div>
-    <div className="mt-4 flex flex-wrap gap-1.5">
-      {project.tech.map((tech) => (
-        <span key={tech} className="bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-700">{tech}</span>
-      ))}
+    <div className="p-5">
+      <div className="flex items-start justify-between gap-3">
+        <h4 className="text-lg font-semibold text-gray-900">{project.name}</h4>
+        <ArrowUpRight size={16} className="mt-1.5 shrink-0 text-gray-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black" />
+      </div>
+      <p className="mt-1 text-sm leading-snug text-gray-600">{project.description}</p>
     </div>
   </a>
 )
@@ -68,13 +73,14 @@ export const CVTabs = ({ cv, projects, githubUrl }: CVTabsProps): React.ReactEle
       {/* CV stays in the DOM so printing always outputs it */}
       <div className={tab === "cv" ? "" : "hidden print:block"}>{cv}</div>
 
-      <div className={tab === "projects" ? "animate-in fade-in duration-200 print:hidden" : "hidden"}>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={tab === "projects" ? "relative -mx-8 -mb-8 overflow-hidden px-8 pb-8 animate-in fade-in duration-200 print:hidden" : "hidden"}>
+        <BackgroundBoxes />
+        <div className="relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.name} project={project} href={`${githubUrl}/${project.name}`} />
           ))}
         </div>
-        <div className="mt-6 flex justify-end">
+        <div className="relative mt-6 flex justify-end">
           <a href={githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 text-sm font-medium text-gray-600 transition-colors duration-150 hover:text-black">
             <Github size={16} />
             All repositories on GitHub

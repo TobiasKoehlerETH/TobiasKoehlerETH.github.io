@@ -2,7 +2,6 @@
  * Contact Information Component
  * 
  * Displays personal contact details with interactive links and icons
- * Matches the sidebar layout from the original CV design
  * 
  * @component ContactInfo
  * @returns {React.ReactElement} Contact information section
@@ -17,7 +16,6 @@ import {
   Linkedin,
   ExternalLink
 } from "lucide-react"
-import { InteractiveLink } from "@/components/ui/interactive-link"
 
 interface ContactInfoProps {
   /** Date of birth */
@@ -132,9 +130,12 @@ export const ContactInfo = ({
       } else {
         return (
           <div key={index} className="relative p-2 -m-2 transition-all duration-150 hover:bg-gray-50 hover:shadow-sm">
-            <InteractiveLink href={item.href} className="relative z-10 block p-1 -m-1">
+            <a
+              href={item.href}
+              className="relative z-10 block p-1 -m-1 text-gray-800 transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-0 after:bg-current after:transition-[width] after:duration-150 hover:after:w-full"
+            >
               {content}
-            </InteractiveLink>
+            </a>
           </div>
         )
       }

@@ -8,7 +8,7 @@
  * @returns {JSX.Element} The complete CV website
  */
 
-import { CVLayout } from "@/components/cv"
+import { CVLayout } from "@/components/cv/CVLayout"
 import { cvData } from "@/data/cvData"
 
 export default function Home() {

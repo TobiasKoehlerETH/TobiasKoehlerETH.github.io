@@ -1,8 +1,7 @@
 /**
  * Skills Section Component
  * 
- * Displays language skills with interactive dot indicators and technical skills with animations
- * Replicates the exact layout from the original German CV with enhanced interactivity
+ * Languages with square level markers and skills grouped by area
  * 
  * @component SkillsSection
  * @returns {JSX.Element} Skills section with languages and technical abilities
