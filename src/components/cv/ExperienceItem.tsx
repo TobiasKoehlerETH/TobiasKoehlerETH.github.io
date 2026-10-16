@@ -63,12 +63,6 @@ export const ExperienceItem = ({
           <div className="flex-1">
             <h4 className="text-lg font-semibold text-gray-800 mb-1">
               {title}
-              {isCurrent && (
-                <span className="ml-3 inline-flex items-center gap-1.5 bg-black px-2 py-1 align-middle text-[10px] font-semibold uppercase tracking-[0.15em] text-white">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 animate-pulse bg-white" />
-                  Current
-                </span>
-              )}
             </h4>
           </div>
         </div>
@@ -134,8 +128,8 @@ export const ExperienceItem = ({
               }
               
               return (
-                <div key={index} className="flex items-center gap-2">
-                  <span className="text-gray-500 text-sm">•</span>
+                <div key={index} className="flex items-start gap-2">
+                  <span className="text-gray-500 text-sm leading-relaxed">•</span>
                   <span className="leading-relaxed">
                     {trimmedLine}
                   </span>

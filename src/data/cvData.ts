@@ -107,14 +107,7 @@ export const cvData: CVData = {
       period: "05/2024 - today",
       isCurrent: true,
       website: "https://www.angst-pfister.com",
-      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design",
-      projects: [
-        {
-          name: "Test",
-          description: "Test project description",
-          technologies: ["Test"]
-        }
-      ]
+      description: "Development and optimization of sensor technologies\nTesting and validation of sensor performance\nPCB Design"
     },
     {
       title: "Intern Development Engineer",

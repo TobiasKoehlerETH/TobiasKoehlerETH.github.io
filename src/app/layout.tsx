@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Jost } from "next/font/google";
+import { Geist_Mono, Sora } from "next/font/google";
 import "./globals.css";
 
-// Jost: open-source Futura revival (Futura LT itself needs a commercial web licence)
-const jost = Jost({
-  variable: "--font-jost",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -25,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jost.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${sora.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
         {children}
       </body>
