@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="960" height="600" fill="none">
-  <rect width="480" height="300" fill="#f5f5f5"/>
-  <path d="M20 20h440v260H20zM20 55h440" stroke="#a3a3a3"/>
-  <path d="M38 35h7v7h-7zM53 35h7v7h-7zM68 35h7v7h-7zM40 80h48v48H40zM40 150h170v18H40zM230 150h210v18H230z" fill="#171717"/>
-  <path d="M105 112h165M40 188h155M40 207h135M40 226h150M230 188h190M230 207h165M230 226h180" stroke="#a3a3a3" stroke-width="3"/>
-  <g fill="#404040" font-family="ui-monospace, Consolas, monospace"><text x="105" y="95" font-size="15">TOBIAS KÖHLER</text><text x="103" y="41" font-size="11">CV / PROJECTS</text></g>
-</svg>

@@ -167,7 +167,7 @@ export const cvData: CVData = {
   ],
   
 
-  // Public repositories, excluding balancing-game at the owner's request.
+  // Public repositories, excluding balancing-game and this site at the owner's request.
   githubProjects: [
     {
       name: "MoldMaker",
@@ -243,11 +243,6 @@ export const cvData: CVData = {
       name: "skills",
       description: "Reusable skills for coding agents.",
       image: "/projects/skills.svg"
-    },
-    {
-      name: "TobiasKoehlerETH.github.io",
-      description: "Personal CV and project portfolio built with Next.js and TypeScript.",
-      image: "/projects/portfolio.svg"
     }
   ]
 }
