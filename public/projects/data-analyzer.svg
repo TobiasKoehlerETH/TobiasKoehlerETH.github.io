@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="960" height="600" fill="none">
+  <rect width="480" height="300" fill="#f5f5f5"/>
+  <path d="M20 20h440v260H20zM20 60h440M140 60v220" stroke="#a3a3a3"/>
+  <g stroke="#d4d4d4"><path d="M165 100h270M165 140h270M165 180h270M165 220h270M210 80v160M265 80v160M320 80v160M375 80v160M430 80v160"/></g>
+  <path d="m165 190 15-15 15 22 15-52 15 20 15-60 15 32 15 30 15-20 15 35 15-67 15 30 15-45 15 20 15-30 15 20 15-35 15 18" stroke="#a3a3a3" stroke-width="2"/>
+  <path d="M165 187c35-5 45-55 75-48s30 41 60 14 45-36 75-35 35-22 60-22" stroke="#171717" stroke-width="3"/>
+  <g fill="#404040" font-family="ui-monospace, Consolas, monospace" font-size="12"><text x="36" y="45">DATA ANALYZER</text><text x="36" y="98">CSV / XLSX</text><text x="36" y="132">FILTER</text><text x="36" y="166">SPECTRUM</text><text x="36" y="200">MODEL</text><text x="165" y="262">TIME-SERIES ANALYSIS</text></g>
+</svg>

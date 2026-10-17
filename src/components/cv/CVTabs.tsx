@@ -18,7 +18,7 @@ import { Project } from "@/data/cvData"
 interface CVTabsProps {
   /** The CV content shown in the first tab */
   cv: React.ReactNode
-  /** Curated GitHub repositories */
+  /** Public GitHub repositories */
   projects: Project[]
   /** GitHub profile URL, used for repository links */
   githubUrl: string
@@ -42,7 +42,7 @@ const ProjectCard = ({ project, href }: { project: Project; href: string }) => (
     </div>
     <div className="p-5">
       <div className="flex items-start justify-between gap-3">
-        <h4 className="text-lg font-semibold text-gray-900">{project.name}</h4>
+        <h4 className="min-w-0 break-words text-lg font-semibold text-gray-900">{project.name}</h4>
         <ArrowUpRight size={16} className="mt-1.5 shrink-0 text-gray-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black" />
       </div>
       <p className="mt-1 text-sm leading-snug text-gray-600">{project.description}</p>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="960" height="600" fill="none">
+  <rect width="480" height="300" fill="#f5f5f5"/>
+  <path d="M20 20h440v260H20zM20 60h440M20 160h440" stroke="#a3a3a3"/>
+  <g stroke="#171717" stroke-width="3"><path d="M50 102v16M62 95v30M74 105v10M86 85v50M98 75v70M110 92v36M122 100v20M134 83v54M146 95v30M158 104v12M170 98v24M182 77v66M194 90v40M206 101v18M218 105v10M230 95v30M242 80v60M254 98v24M266 105v10M278 90v40M290 82v56M302 96v28M314 104v12M326 98v24M338 85v50M350 99v22M362 103v14M374 96v28M386 104v12M398 99v22M410 105v10"/></g>
+  <g fill="#171717"><path d="M40 188h6v6h-6zM40 214h6v6h-6zM40 240h6v6h-6z"/></g>
+  <path d="M60 191h210M60 217h340M60 243h290" stroke="#a3a3a3" stroke-width="3"/>
+  <g fill="#404040" font-family="ui-monospace, Consolas, monospace" font-size="12"><text x="36" y="45">MEETING WORKSPACE</text><text x="320" y="45">LOCAL AUDIO</text></g>
+</svg>

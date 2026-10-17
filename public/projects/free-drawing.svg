@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="960" height="600" fill="none">
+  <rect width="480" height="300" fill="#fafafa"/>
+  <path d="M20 20h440v260H20zM285 230h175M285 230v50M365 230v50M285 254h175" stroke="#737373"/>
+  <g stroke="#171717" stroke-width="2"><path d="M80 80h150v100H80zM80 215h150v16H80z"/><circle cx="105" cy="105" r="10"/><circle cx="205" cy="105" r="10"/><circle cx="105" cy="155" r="10"/><circle cx="205" cy="155" r="10"/><path d="m300 120 70-35 50 30-70 35zM300 120v16l50 30 70-35v-16M350 150v16"/></g>
+  <g stroke="#737373"><path d="M80 70V48M230 70V48M80 55h150M68 80H48M68 180H48M55 80v100"/><path d="m80 55 7-3v6zm150 0-7-3v6zM55 80l-3 7h6zm0 100-3-7h6z" fill="#737373"/><path d="M155 70v120M70 130h170" stroke-dasharray="6 3 1 3"/></g>
+  <g fill="#404040" font-family="ui-monospace, Consolas, monospace" font-size="11"><text x="143" y="47">150</text><text x="31" y="134">100</text><text x="294" y="246">TECHDRAW</text><text x="374" y="246">STEP</text><text x="294" y="271">1:1</text><text x="374" y="271">A4</text><text x="36" y="265">FREECAD / DRAWING INSPECTION</text></g>
+</svg>

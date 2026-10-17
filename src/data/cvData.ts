@@ -167,6 +167,7 @@ export const cvData: CVData = {
   ],
   
 
+  // Public repositories, excluding balancing-game at the owner's request.
   githubProjects: [
     {
       name: "MoldMaker",
@@ -222,6 +223,31 @@ export const cvData: CVData = {
       name: "trello-ppt",
       description: "Creates a weekly PowerPoint status slide from a Trello board.",
       image: "/projects/trello-ppt.webp"
+    },
+    {
+      name: "data-analyzer",
+      description: "Explores, filters and models time-series data from CSV and Excel files.",
+      image: "/projects/data-analyzer.svg"
+    },
+    {
+      name: "free-drawing",
+      description: "Generates and inspects FreeCAD technical drawings from STEP models.",
+      image: "/projects/free-drawing.svg"
+    },
+    {
+      name: "meeting-workspace",
+      description: "Records meetings and creates transcripts, notes and summaries locally.",
+      image: "/projects/meeting-workspace.svg"
+    },
+    {
+      name: "skills",
+      description: "Reusable skills for coding agents.",
+      image: "/projects/skills.svg"
+    },
+    {
+      name: "TobiasKoehlerETH.github.io",
+      description: "Personal CV and project portfolio built with Next.js and TypeScript.",
+      image: "/projects/portfolio.svg"
     }
   ]
 }
