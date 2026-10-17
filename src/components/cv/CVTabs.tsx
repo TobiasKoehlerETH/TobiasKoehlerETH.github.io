@@ -29,7 +29,7 @@ const ProjectCard = ({ project, href }: { project: Project; href: string }) => (
     href={href}
     target="_blank"
     rel="noreferrer"
-    className="group flex h-full flex-col border border-gray-200 bg-white transition-all duration-150 hover:border-black hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
+    className="group flex h-full flex-col border border-gray-200 bg-white transition-[border-color,box-shadow] duration-200 ease-out hover:border-black hover:shadow-sm motion-reduce:transition-none focus:outline-none focus-visible:ring-2 focus-visible:ring-black/30"
   >
     <div className="relative aspect-[16/10] overflow-hidden border-b border-gray-200 bg-gray-100">
       <Image
@@ -37,13 +37,13 @@ const ProjectCard = ({ project, href }: { project: Project; href: string }) => (
         alt={`${project.name} preview`}
         fill
         sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
-        className="object-cover transition duration-300 group-hover:scale-[1.02]"
+        className="object-cover transition-opacity duration-200 ease-out group-hover:opacity-90 motion-reduce:transition-none"
       />
     </div>
     <div className="p-5">
       <div className="flex items-start justify-between gap-3">
         <h4 className="min-w-0 break-words text-lg font-semibold text-gray-900">{project.name}</h4>
-        <ArrowUpRight size={16} className="mt-1.5 shrink-0 text-gray-400 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-black" />
+        <ArrowUpRight size={16} className="mt-1.5 shrink-0 text-gray-400 transition-colors duration-200 ease-out group-hover:text-black motion-reduce:transition-none" />
       </div>
       <p className="mt-1 text-sm leading-snug text-gray-600">{project.description}</p>
     </div>
